@@ -35,9 +35,30 @@ namespace ResDecoder
             string iPath = textBox1.Text;
             string oPath = textBox2.Text;
             Envirment.NumberOfCharacter = Convert.ToInt32(numericUpDown1.Value);
+            string versionPrefix = "";
+            if (radioButton1.Checked)
+                versionPrefix = "";
+            else if (radioButton2.Checked)
+                versionPrefix = "_KOR";
+            else if (radioButton3.Checked)
+                versionPrefix = "_JPN";
+            else if (radioButton4.Checked)
+                versionPrefix = "_TWN";
+            else if (radioButton5.Checked)
+                versionPrefix = "_ENG";
+            else
+                versionPrefix = "";
+
 
             // for tb_Achievement_Script.res
-            ProcessFile(iPath, oPath, "tb_Achievement_Script", new TbAchievementScript());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Achievement_Script{0}", versionPrefix), new TbAchievementScript());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Achievement_Script", new TbAchievementScript());
+            }
 
             // for tb_Akashic_Parts.res
             //ProcessFile(path, "tb_Akashic_Parts", new TbAkashicParts());
@@ -47,24 +68,55 @@ namespace ResDecoder
 
             // for tb_Booster.res
             ProcessFile(iPath, oPath, "tb_Booster", new TbBooster());
-            
+
             // for tb_Booster_Script.res
-            ProcessFile(iPath, oPath, "tb_Booster_Script", new TbBoosterScript());
-            
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Booster_Script{0}", versionPrefix), new TbBoosterScript());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Booster_Script", new TbBoosterScript());
+            }
+
             // for tb_Buff_Script.res
-            ProcessFile(iPath, oPath, "tb_Buff_Script", new TbBuffScript());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Buff_Script{0}", versionPrefix), new TbBuffScript());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Buff_Script", new TbBuffScript());
+            }
 
             // for tb_Character_Info.res
             //ProcessFile(path, "tb_Character_Parts", new TbCharacterParts());
 
             // for tb_ChattingFilter.res
+            /*
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_ChattingFilter{0}", versionPrefix), new TbChattingFilter());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_ChattingFilter", new TbChattingFilter());
+            }
+            */
             ProcessFile(iPath, oPath, "tb_ChattingFilter", new TbChattingFilter());
 
             // for Tb_Chattingcommand.res
             ProcessFile(iPath, oPath, "Tb_Chattingcommand", new TbChattingCommand());
 
             // for tb_cinema_string.res
-            ProcessFile(iPath, oPath, "tb_Cinema_String", new TbCinemaString());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Cinema_String{0}", versionPrefix), new TbCinemaString());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Cinema_String", new TbCinemaString());
+            }
 
             // for Tb_Class_Form.res
             ProcessFile(iPath, oPath, "Tb_Class_Form", new TbClassForm());
@@ -73,13 +125,38 @@ namespace ResDecoder
             ProcessFile(iPath, oPath, "Tb_Class_Speech", new TbClassSpeech());
 
             // for tb_Cutscene_String.res
-            ProcessFile(iPath, oPath, "tb_Cutscene_String", new TbCutsceneString());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Cutscene_String{0}", versionPrefix), new TbCutsceneString());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Cutscene_String", new TbCutsceneString());
+            }
+
+            // Where's "tb_Help_PopUp" and "tb_Help"
+            // both have versionPrefix
+
 
             // for tb_item_script.res
-            ProcessFile(iPath, oPath, "tb_item_script", new TbItemScript());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_item_script{0}", versionPrefix), new TbItemScript());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_item_script", new TbItemScript());
+            }
 
             // for tb_LeagueSkill_Script.res
-            ProcessFile(iPath, oPath, "tb_LeagueSkill_Script", new TbLeagueSkillScript());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_LeagueSkill_Script{0}", versionPrefix), new TbLeagueSkillScript());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_LeagueSkill_Script", new TbLeagueSkillScript());
+            }
 
             // for tb_Loading_Img.res
             //ProcessFile(path, "tb_Loading_Img", new TbLoadingImg());
@@ -88,50 +165,116 @@ namespace ResDecoder
             //ProcessFile(path, "tb_MazeReward_GoldDirect", new TbMazeRewardGoldDirect());
 
             // for tb_Monster_script.res
-            ProcessFile(iPath, oPath, "tb_Monster_script", new TbMonsterScript());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Monster_script{0}", versionPrefix), new TbMonsterScript());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Monster_script", new TbMonsterScript());
+            }
 
             // for Tb_Namefilter.res
+            /*
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("Tb_Namefilter{0}", versionPrefix), new TbNameFilter());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "Tb_Namefilter", new TbNameFilter());
+            }
+            */
             ProcessFile(iPath, oPath, "Tb_Namefilter", new TbNameFilter());
 
             // for tb_NPC_Script.res
-            ProcessFile(iPath, oPath, "tb_NPC_Script", new TbNPCScript());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_NPC_Script{0}", versionPrefix), new TbNPCScript());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_NPC_Script", new TbNPCScript());
+            }
 
             // for tb_Quest_Script.res
-            ProcessFile(iPath, oPath, "tb_Quest_Script", new TbQuestScript());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Quest_Script{0}", versionPrefix), new TbQuestScript());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Quest_Script", new TbQuestScript());
+            }
 
             // for tb_Shop_String.res
-            ProcessFile(iPath, oPath, "tb_Shop_String", new TbShopString());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Shop_String{0}", versionPrefix), new TbShopString());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Shop_String", new TbShopString());
+            }
 
             // for tb_Skill.res
             ProcessFile(iPath, oPath, "tb_Skill", new TbSkill());
 
             // for tb_Skill_Script.res
-            ProcessFile(iPath, oPath, "tb_Skill_Script", new TbSkillScript());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Skill_Script{0}", versionPrefix), new TbSkillScript());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Skill_Script", new TbSkillScript());
+            }
 
             // for tb_soul_metry.res
             //ProcessFile(path, "tb_soul_metry", new TbSoulMetry());
 
             // for tb_soul_metry_string.res
-            ProcessFile(iPath, oPath, "tb_soul_metry_string", new TbSoulMetryString());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_soul_metry_string{0}", versionPrefix), new TbSoulMetryString());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_soul_metry_string", new TbSoulMetryString());
+            }
 
             // for tb_Speech.res
             ProcessFile(iPath, oPath, "tb_Speech", new TbSpeech());
 
             // for tb_Speech_String.res
-            ProcessFile(iPath, oPath, "tb_Speech_String", new TbSpeechString());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Speech_String{0}", versionPrefix), new TbSpeechString());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Speech_String", new TbSpeechString());
+            }
 
             // for tb_Speech_tag.res
             ProcessFile(iPath, oPath, "tb_Speech_tag", new TbSpeechTag());
 
             // for tb_SystemMail.res
-            ProcessFile(iPath, oPath, "tb_SystemMail", new TbSystemMail());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_SystemMail{0}", versionPrefix), new TbSystemMail());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_SystemMail", new TbSystemMail());
+            }
 
             // for Tb_Talk.res
             ProcessFile(iPath, oPath, "Tb_Talk", new TbTalk());
 
             // for Tb_Talk_List.res
             ProcessFile(iPath, oPath, "Tb_Talk_List", new TbTalkList());
-
+            
             // for Tb_Talk_String.res
             ProcessFile(iPath, oPath, "Tb_Talk_String", new TbTalkString());
 
@@ -139,16 +282,40 @@ namespace ResDecoder
             ProcessFile(iPath, oPath, "Tb_Title_Info", new TbTitleInfo());
 
             // for tb_Title_String.res
-            ProcessFile(iPath, oPath, "tb_Title_String", new TbTitleString());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Title_String{0}", versionPrefix), new TbTitleString());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Title_String", new TbTitleString());
+            }
 
             // for tb_Tooltip_String.res
-            ProcessFile(iPath, oPath, "tb_Tooltip_String", new TbTooltipString());
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_Tooltip_String{0}", versionPrefix), new TbTooltipString());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_Tooltip_String", new TbTooltipString());
+            }
+
+            // Where's tb_UI_Img???
+            // it has versionPrefix
 
             // for tb_ui_string.res
-            ProcessFile(iPath, oPath, "tb_ui_string", new TbUIString());
-            
+            try
+            {
+                ProcessFile(iPath, oPath, string.Format("tb_ui_string{0}", versionPrefix), new TbUIString());
+            }
+            catch
+            {
+                ProcessFile(iPath, oPath, "tb_ui_string", new TbUIString());
+            }
+
             MessageBox.Show("finish");
-        }
+            }
 
         private void ProcessFile<T>(string iPath, string oPath, string name, T type) where T : IResReader, new()
         {

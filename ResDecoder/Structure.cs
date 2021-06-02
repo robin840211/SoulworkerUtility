@@ -304,30 +304,39 @@ namespace ResDecoder
 
     public class TbClassSpeech : ResReader
     {
-        uint[] i = new uint[50];
+        int arrayLength;
+        uint[] i;
 
+        public TbClassSpeech()
+        {
+            arrayLength = Envirment.NumberOfCharacter;
+            i = new uint[2 + 6 * arrayLength];
+            // i = new uint[56];
+        }
+        
         override public void Read(FileStream fs)
         {
             int k = 1;
-            for (int j = 1; j <= 9; j++)
+            for (int j = 1; j <= 1 + arrayLength; j++)
                 i[k++] = GetUint(fs);
-            for (int j = 1; j <= 16; j++)
+            for (int j = 1; j <= 2 * arrayLength; j++)
                 i[k++] = GetByte(fs);
-            for (int j = 1; j <= 8; j++)
+            for (int j = 1; j <= arrayLength; j++)
                 i[k++] = GetUint(fs);
-            for (int j = 1; j <= 8; j++)
+            for (int j = 1; j <= arrayLength; j++)
                 i[k++] = GetByte(fs);
-            for (int j = 1; j <= 8; j++)
+            for (int j = 1; j <= arrayLength; j++)
                 i[k++] = GetUint(fs);
         }
 
         override public void Write(StringBuilder sb)
         {
-            int k = 1, l = 1;
+            // int k = 1;
             sb.AppendLine($"ID={i[1]}");
             //for (int j = 2; j <= 43; j++)
             //    sb.AppendLine($"NUM {k++}={i[j]}");
-            for (int j = 2; j <= 49; j++)
+            // for (int j = 2; j <= 55; j++)
+            for (int j = 2; j <= 1 + 6 * arrayLength; j++)
                 sb.AppendLine($"{i[j]}");
 
             // 換行
@@ -519,28 +528,23 @@ namespace ResDecoder
         byte b1;
         string str1;
         byte b2;
-        uint i1;
-        uint i2;
-        uint i3;
-        uint i4;
-        uint i5;
-        uint i6;
-        uint i7; // for Chii
-        uint i8; // for Ephnel
+        uint[] i;
+
+        int arrayLength;
+
+        public TbSpeechTag()
+        {
+            arrayLength = Envirment.NumberOfCharacter;
+            i = new uint[arrayLength];
+        }
 
         override public void Read(FileStream fs)
         {
             b1 = GetByte(fs);
             str1 = GetString(fs);
             b2 = GetByte(fs);
-            i1 = GetUint(fs);
-            i2 = GetUint(fs);
-            i3 = GetUint(fs);
-            i4 = GetUint(fs);
-            i5 = GetUint(fs);
-            i6 = GetUint(fs);
-            i7 = GetUint(fs);
-            i8 = GetUint(fs);
+            for (int j = 1; j <= arrayLength; j++)
+                i[j-1] = GetUint(fs);
         }
 
         override public void Write(StringBuilder sb)
@@ -548,14 +552,12 @@ namespace ResDecoder
             sb.AppendLine($"ID={b1}");
             sb.AppendLine(str1);
             sb.AppendLine($"NUM1={b2}");
-            sb.AppendLine($"NUM2={i1}");
-            sb.AppendLine($"NUM4={i2}");
-            sb.AppendLine($"NUM5={i3}");
-            sb.AppendLine($"NUM6={i4}");
-            sb.AppendLine($"NUM7={i5}");
-            sb.AppendLine($"NUM8={i6}");
-            sb.AppendLine($"NUM9={i7}");
-            sb.AppendLine($"NUM10={i8}");
+            
+            for (int j = 1; j <= arrayLength; j++)
+                if (j - 1 == 0)
+                    sb.AppendLine($"NUM{j+1}={i[j-1]}");
+                else
+                    sb.AppendLine($"NUM{j+2}={i[j-1]}");
 
             // 換行
             sb.AppendLine("");
@@ -713,6 +715,17 @@ namespace ResDecoder
             i[k++] = GetByte(fs);
             i[k++] = GetByte(fs);
             i[k++] = GetByte(fs);
+
+            // for new KR use, should be commented when in other versions
+			// need to investigated about structures
+            i[k++] = GetByte(fs);
+            i[k++] = GetByte(fs);
+            i[k++] = GetByte(fs);
+            i[k++] = GetByte(fs);
+            i[k++] = GetByte(fs);
+            i[k++] = GetByte(fs);
+            i[k++] = GetByte(fs);
+            i[k++] = GetByte(fs);
         }
 
         override public void Write(StringBuilder sb)
@@ -752,6 +765,17 @@ namespace ResDecoder
             sb.AppendLine($"{i[k++]}");
             sb.AppendLine($"{i[k++]}");
             sb.AppendLine($"{i[k++]}");
+
+            // for KR use
+            sb.AppendLine($"{i[k++]}");
+            sb.AppendLine($"{i[k++]}");
+            sb.AppendLine($"{i[k++]}");
+            sb.AppendLine($"{i[k++]}");
+            sb.AppendLine($"{i[k++]}");
+            sb.AppendLine($"{i[k++]}");
+            sb.AppendLine($"{i[k++]}");
+            sb.AppendLine($"{i[k++]}");
+
 
             //for (; k<20;k++)
             //    sb.AppendLine($"NUM{n++}={i[k]}");

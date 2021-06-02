@@ -127,7 +127,10 @@ namespace TitleParser
                             (titleInfo.str[2] == "3") ? "莉莉" :
                             (titleInfo.str[2] == "4") ? "金" :
                             (titleInfo.str[2] == "5") ? "史黛菈" :
-                        (titleInfo.str[2] == "6") ? "伊莉絲" : "琪";
+                            (titleInfo.str[2] == "6") ? "伊莉絲" :
+                            (titleInfo.str[2] == "7") ? "琪" :
+                            (titleInfo.str[2] == "8") ? "艾芙妮爾" :
+							(titleInfo.str[2] == "9") ? "李娜飛" : "請在原始碼增加新角色";
                     }
                     method.WriteCharacter(sw, name);
 

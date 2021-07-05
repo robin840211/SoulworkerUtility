@@ -1,9 +1,11 @@
 # SoulworkerUtility
 ## CinemaParser
 
-重組副本內劇情
+重組副本內劇情為可看的 `*.txt`  
+Parse CinemaTalk in maze to readable `*.txt`
 
-需要：
+需要：  
+Needs:
 ```
 Setting.ini
 tb_cinema_string.txt
@@ -13,9 +15,11 @@ Scripts\CinemaTalk\*.xml
 
 ## ResDecoder
 
-解碼 `*.res`
+解碼 `*.res` 為 `*.txt`  
+Decode `*.res` files to `*.txt`
 
-支援：
+支援：  
+Currently support:
 ```
 tb_Achievement_Script.res
 tb_Akashic_Parts.res
@@ -58,9 +62,11 @@ tb_ui_string.res
 
 ## SkillParser
 
-技能分析
+技能分析為可看的 `*.txt`  
+Parse skill detail to readable `*.txt`
 
-需要：
+需要：  
+Needs:
 ```
 tb_Skill_Script.txt
 tb_Skill.txt
@@ -68,9 +74,11 @@ tb_Skill.txt
 
 ## TitleParser
 
-稱號重組
+稱號重組為可閱讀的 `*.txt` `*.csv` `*.html`  
+Parse title info detail to readable `*.txt` `*.csv` `*.html`
 
-需要：
+需要：  
+Needs:
 ```
 Setting.json
 Tb_Title_Info.txt
@@ -78,3 +86,11 @@ tb_Title_String.txt
 ```
 
 ## Xor
+
+Xor 處理 `.v` 檔案  
+To Xor `.v` files
+
+## vArc_Package_manager
+
+打包、解包 vArc 檔案用  
+Extract / Compress vArc files

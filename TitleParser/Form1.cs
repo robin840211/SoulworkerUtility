@@ -14,14 +14,21 @@ namespace TitleParser
 {
     public partial class Form1 : Form
     {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
         private string mInputPath
         {
             get { return textBox1.Text; }
             set
             {
                 textBox1.Text = value;
+                /*
                 mTitleInfoFileName = Path.Combine(mInputPath, "Tb_Title_Info.txt");
                 mTitleStringFileName = Path.Combine(mInputPath, "tb_Title_String.txt");
+                */
             }
         }
 
@@ -32,18 +39,20 @@ namespace TitleParser
         }
 
         //private static string mSettingFileName = Path.Combine(Application.StartupPath, "Setting.ini");
-        private static string mSettingFileName = Path.Combine(Application.StartupPath, "Setting.json");
+        // private static string mSettingFileName = Path.Combine(Application.StartupPath, "Setting.json");
+        private string mSettingFileName;
         private string mTitleInfoFileName;
         private string mTitleStringFileName;
-
+        private string versionPrefix;
+        private string locale_PrevName;
+        private string locale_AfterName;
+        /*
+        private string pTitleInfoFileName;
+        private string pTitleStringFileName;
+        */
         //IniFile ini = new IniFile(mSettingFileName);
-        JsonFile ini = new JsonFile(mSettingFileName);
+        //JsonFile ini = new JsonFile(mSettingFileName);
         Dictionary<string, string> mCache = new Dictionary<string, string>();
-
-        public Form1()
-        {
-            InitializeComponent();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -59,21 +68,67 @@ namespace TitleParser
 
                 mInputPath = textBox1.Text;
                 mOutputPath = textBox2.Text;
-
-                if(String.IsNullOrEmpty(mInputPath))
+                /*
+                if (String.IsNullOrEmpty(mInputPath))
+                    mInputPath = Application.StartupPath;
                     throw new System.InvalidOperationException($"輸入目錄不可為空");
 
                 if (String.IsNullOrEmpty(mOutputPath))
+                    mOutputPath = Application.StartupPath;
                     throw new System.InvalidOperationException($"輸出目錄不可為空");
+                */
+                if (radioButton4.Checked)
+                    versionPrefix = "_KOR";
+                else if (radioButton5.Checked)
+                    versionPrefix = "_JPN";
+                else if (radioButton6.Checked)
+                    versionPrefix = "_TWN";
+                else if (radioButton7.Checked)
+                    versionPrefix = "_ENG";
+                else if (radioButton8.Checked)
+                    versionPrefix = "_Custom";
+                else
+                    versionPrefix = "";
 
-                mTitleInfoFileName = Path.Combine(mInputPath, "Tb_Title_Info.txt");
-                mTitleStringFileName = Path.Combine(mInputPath, "tb_Title_String.txt");
+                if (radioButton6.Checked)
+                {
+                    locale_PrevName = "前方稱號";
+                    locale_AfterName = "後方稱號";
+                }
+                else
+                {
+                    locale_PrevName = "Title_Prev";
+                    locale_AfterName = "Title_After";
+                }
 
-                if (!File.Exists(mTitleInfoFileName))
-                    throw new System.InvalidOperationException($"{mTitleInfoFileName} 檔案不存在");
+
+                mSettingFileName = Path.Combine(Application.StartupPath, $"Setting{versionPrefix}.json");
+                mTitleStringFileName = Path.Combine(mInputPath, $"tb_Title_String{versionPrefix}.txt");
+                mTitleInfoFileName = Path.Combine(mInputPath, $"Tb_Title_Info{versionPrefix}.txt");
+
+                if (!File.Exists(mSettingFileName))
+                {
+                    if (File.Exists(Path.Combine(Application.StartupPath, $"Setting.txt")))
+                        mSettingFileName = Path.Combine(Application.StartupPath, $"Setting.txt");
+                    else
+                        throw new System.InvalidOperationException($"{mSettingFileName} 檔案不存在，請將其放置於程式目錄！");
+                }
 
                 if (!File.Exists(mTitleStringFileName))
-                    throw new System.InvalidOperationException($"{mTitleStringFileName} 檔案不存在");
+                {
+                    if (File.Exists(Path.Combine(mInputPath, $"tb_Title_String.txt")))
+                        mTitleStringFileName = Path.Combine(mInputPath, $"tb_Title_String.txt");
+                    else
+                        throw new System.InvalidOperationException($"{mTitleStringFileName} 檔案不存在");
+                }
+
+                if (!File.Exists(mTitleInfoFileName))
+                {
+                    if (File.Exists(Path.Combine(mInputPath, "Tb_Title_Info.txt")))
+                        mTitleInfoFileName = Path.Combine(mInputPath, "Tb_Title_Info.txt");
+                    else
+                        throw new System.InvalidOperationException($"{mTitleInfoFileName} 檔案不存在");
+                }
 
                 GetIdTable(mTitleStringFileName, out title);
                 GetIdTable(mTitleInfoFileName, out titleInfo);
@@ -97,8 +152,8 @@ namespace TitleParser
 
         private void WriteData(WritePackage format, List<TbTitle> title, List<TbTitleInfo> frontTitle, List<TbTitleInfo> backTitle)
         {
-            ProcessByIndividual(format.method, title, frontTitle, $"前方稱號.{format.ext}");
-            ProcessByIndividual(format.method, title, backTitle, $"後方稱號.{format.ext}");
+            ProcessByIndividual(format.method, title, frontTitle, $"{locale_PrevName}.{format.ext}");
+            ProcessByIndividual(format.method, title, backTitle, $"{locale_AfterName}.{format.ext}");
         }
 
         private void ProcessByIndividual(WriteFormat method, List<TbTitle> titles, List<TbTitleInfo> titleInfos, string filename)
@@ -206,6 +261,7 @@ namespace TitleParser
 
         private string ReadIni(string section, string key)
         {
+            JsonFile ini = new JsonFile(mSettingFileName);
             if (key == "149")
                 Debug.Write("0");
             string result = ini.Read(key, section);
@@ -250,6 +306,11 @@ namespace TitleParser
         {
             // default
             radioButton1.Checked = true;
+        }
+
+        private void radioButtons_CheckedChanged(object sender, EventArgs e)
+        {
+            mCache.Clear();
         }
     }
 }

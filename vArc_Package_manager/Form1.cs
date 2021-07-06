@@ -88,8 +88,6 @@ namespace vArc_Package_manager
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			Log.SetControl(mLogger.TextBox);
-			base.FormBorderStyle = FormBorderStyle.FixedSingle;
-			base.MaximizeBox = false;
 			listBox1.SelectionMode = SelectionMode.MultiExtended;
 			listBox2.SelectionMode = SelectionMode.MultiExtended;
 		}
@@ -172,7 +170,7 @@ namespace vArc_Package_manager
 
 		private void Unpack(string outputFolder, List<string> files)
 		{
-			Log.WriteLine($"Unpack to \"{(string.IsNullOrWhiteSpace(outputFolder) ? Path.GetFullPath(".") : outputFolder )}\"");
+			Log.WriteLine($"Unpack to \"{(string.IsNullOrWhiteSpace(outputFolder) ? Application.StartupPath : outputFolder )}\"");
 			int num = 0;
 			int count = files.Count;
 			foreach (string file in files)
@@ -325,7 +323,7 @@ namespace vArc_Package_manager
 		{
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			openFileDialog.Title = "Select files";
-			openFileDialog.InitialDirectory = ".\\";
+			openFileDialog.InitialDirectory = Application.StartupPath;
 			openFileDialog.Filter = filter;
 			openFileDialog.Multiselect = true;
 			if (openFileDialog.ShowDialog() != DialogResult.OK)

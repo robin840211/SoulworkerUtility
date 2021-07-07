@@ -323,7 +323,7 @@ namespace ResDecoder
             string inputFilename = Path.Combine(iPath, file + ".res");
             string outputFilename = Path.Combine(oPath, file + ".txt");
             if (!File.Exists(inputFilename))
-                throw new Exception(inputFilename + "不存在");
+                throw new Exception(inputFilename + " not exist!");
 
             List<T> tbs;
             Read(inputFilename, out tbs);

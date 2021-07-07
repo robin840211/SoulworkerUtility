@@ -15,7 +15,8 @@ namespace SkillParser
     {
         string mInfoFile = "tb_Skill_Script.txt";
         string mParamFile = "tb_Skill.txt";
-        List<string> mCharactorList = new List<string>() { "哈露", "歐文", "莉莉", "金", "史黛菈", "伊莉絲", "琪", "艾芙妮爾", "李娜飛" };
+        // List<string> mCharactorList = new List<string>() { "哈露", "歐文", "莉莉", "金", "史黛菈", "伊莉絲", "琪", "艾芙妮爾", "李娜飛" };
+        List<string> mCharactorList = new List<string>() { "Haru", "Erwin", "Lily", "Jin", "Stella", "Iris", "Chii", "Ephnel", "Lee Nabi" };
 
         public Form1()
         {
@@ -66,7 +67,7 @@ namespace SkillParser
                     if (string.IsNullOrEmpty(skillScript.str[0])) continue;
                     if (skillScript.str[0] == "0") continue;
 
-#region For debug
+                    #region For debug
 #if false
                     if (list.str[30] != "2" && list.str[30] != "3" && list.str[30] != "4" && list.str[31] != "0")
                     {
@@ -75,8 +76,8 @@ namespace SkillParser
                         Debug.WriteLine($"");
                     }
 #endif
-#endregion
-
+                    #endregion
+                    /*
                     string costStr = (skill.str[30] == "2") ? "靈魂值消耗量" :
                         (skill.str[30] == "3") ? "耐力消耗量" :
                         (skill.str[30] == "4") ? "SV消耗量" : "未知";
@@ -90,7 +91,20 @@ namespace SkillParser
                     sw.WriteLine($"圖示：{skillScript.str[3]}");
                     if (skillScript.str[5] != "0")
                         sw.WriteLine($"影片：{skillScript.str[5]}");
-
+                    */
+                    string costStr = (skill.str[30] == "2") ? "SG Cost" :
+                        (skill.str[30] == "3") ? "Stamina Cost" :
+                        (skill.str[30] == "4") ? "SV Cost" : "Unknown";
+                    sw.WriteLine($"Skill name: {skillScript.str[0]}");
+                    sw.WriteLine($"Required level: {skill.str[6]}");
+                    sw.WriteLine($"Required SP: {skill.str[8]}");
+                    if (skillScript.str[1] != "-")
+                        sw.WriteLine($"Skill Info: {skillScript.str[1]}");
+                    if (skillScript.str[1] != "0")
+                        sw.WriteLine($"Next LV Info: {skillScript.str[2]}");
+                    sw.WriteLine($"Img: {skillScript.str[3]}");
+                    if (skillScript.str[5] != "0")
+                        sw.WriteLine($"Video: {skillScript.str[5]}");
                     //if (skill.str[21] != "0")
                     //    sw.WriteLine($"傷害量：{skill.str[21]}");
 

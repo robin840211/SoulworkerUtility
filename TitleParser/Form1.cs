@@ -111,7 +111,8 @@ namespace TitleParser
                     if (File.Exists(Path.Combine(Application.StartupPath, $"Setting.txt")))
                         mSettingFileName = Path.Combine(Application.StartupPath, $"Setting.txt");
                     else
-                        throw new System.InvalidOperationException($"{mSettingFileName} 檔案不存在，請將其放置於程式目錄！");
+                        // throw new System.InvalidOperationException($"{mSettingFileName} 檔案不存在，請將其放置於程式目錄！");
+                        throw new System.InvalidOperationException($"{mSettingFileName} not exist, please put in Program Execution Directory!");
                 }
 
                 if (!File.Exists(mTitleStringFileName))
@@ -119,7 +120,8 @@ namespace TitleParser
                     if (File.Exists(Path.Combine(mInputPath, $"tb_Title_String.txt")))
                         mTitleStringFileName = Path.Combine(mInputPath, $"tb_Title_String.txt");
                     else
-                        throw new System.InvalidOperationException($"{mTitleStringFileName} 檔案不存在");
+                        // throw new System.InvalidOperationException($"{mTitleStringFileName} 檔案不存在");
+                        throw new System.InvalidOperationException($"{mTitleStringFileName} not exist!");
                 }
 
                 if (!File.Exists(mTitleInfoFileName))
@@ -127,7 +129,8 @@ namespace TitleParser
                     if (File.Exists(Path.Combine(mInputPath, "Tb_Title_Info.txt")))
                         mTitleInfoFileName = Path.Combine(mInputPath, "Tb_Title_Info.txt");
                     else
-                        throw new System.InvalidOperationException($"{mTitleInfoFileName} 檔案不存在");
+                        // throw new System.InvalidOperationException($"{mTitleInfoFileName} 檔案不存在");
+                        throw new System.InvalidOperationException($"{mTitleInfoFileName} not exist!");
                 }
 
                 GetIdTable(mTitleStringFileName, out title);
@@ -177,6 +180,7 @@ namespace TitleParser
                     string name = "";
                     if (titleInfo.str[2] != "0")
                     {
+                        /*
                         name = (titleInfo.str[2] == "1") ? "哈露" :
                             (titleInfo.str[2] == "2") ? "歐文" :
                             (titleInfo.str[2] == "3") ? "莉莉" :
@@ -185,7 +189,17 @@ namespace TitleParser
                             (titleInfo.str[2] == "6") ? "伊莉絲" :
                             (titleInfo.str[2] == "7") ? "琪" :
                             (titleInfo.str[2] == "8") ? "艾芙妮爾" :
-							(titleInfo.str[2] == "9") ? "李娜飛" : "請在原始碼增加新角色";
+							(titleInfo.str[2] == "9") ? "李娜飛" : "未知，請在原始碼增加新角色並重新編譯";
+                        */
+                        name = (titleInfo.str[2] == "1") ? "Haru" :
+                            (titleInfo.str[2] == "2") ? "Erwin" :
+                            (titleInfo.str[2] == "3") ? "Lily" :
+                            (titleInfo.str[2] == "4") ? "Jin" :
+                            (titleInfo.str[2] == "5") ? "Stella" :
+                            (titleInfo.str[2] == "6") ? "Iris" :
+                            (titleInfo.str[2] == "7") ? "Chii" :
+                            (titleInfo.str[2] == "8") ? "Ephnel" :
+                            (titleInfo.str[2] == "9") ? "Lee Nabi" : "Unknown, please add character into Source Code and recompile.";
                     }
                     method.WriteCharacter(sw, name);
 

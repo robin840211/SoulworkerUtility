@@ -69,37 +69,44 @@ namespace TitleParser
 
         public void WriteNumber(StreamWriter sw, string number)
         {
-            sw.WriteLine($"編號：{number}");
+            //sw.WriteLine($"編號：{number}");
+            sw.WriteLine($"No. {number}");
         }
 
         public void WriteCharacter(StreamWriter sw, string name)
         {
-            sw.WriteLine($"角色：{name}");
+            //sw.WriteLine($"角色：{name}");
+            sw.WriteLine($"Character: {name}");
         }
 
         public void WriteTitle(StreamWriter sw, string title)
         {
-            sw.WriteLine($"名稱：{title}");
+            // sw.WriteLine($"名稱：{title}");
+            sw.WriteLine($"Title Name: {title}");
         }
 
         public void WriteDescription(StreamWriter sw, string text)
         {
-            sw.WriteLine($"說明：{text}");
+            // sw.WriteLine($"描述：{text}");
+            sw.WriteLine($"Description: {text}");
         }
 
         public void WriteObtain(StreamWriter sw, string method)
         {
-            sw.WriteLine($"獲得方法：{method}");
+            //sw.WriteLine($"獲得方法：{method}");
+            sw.WriteLine($"Acquired from: {method}");
         }
 
         public void WriteNoEffect(StreamWriter sw)
         {
-            sw.WriteLine($"效果：無");
+            // sw.WriteLine($"效果：無");
+            sw.WriteLine($"Effect: None");
         }
 
         public void WriteEffect(StreamWriter sw, string [] effects)
         {
-            sw.WriteLine($"效果：");
+            // sw.WriteLine($"效果：");
+            sw.WriteLine($"Effect: ");
             foreach (var eff in effects)
                 sw.WriteLine(eff);
         }
@@ -147,7 +154,8 @@ namespace TitleParser
 
         public void WriteNoEffect(StreamWriter sw)
         {
-            sw.Write($"無, ");
+            //sw.Write($"無, ");
+            sw.Write($"None, ");
         }
 
         public void WriteEffect(StreamWriter sw, string[] effects)
@@ -172,7 +180,8 @@ namespace TitleParser
             sw.WriteLine($"</head>");
             sw.WriteLine($"<body>");
             sw.WriteLine($"<table cellpadding=\"3\" border = '1'>");
-            sw.WriteLine($"<tr><td>ID</td><td>腳色</td><td>稱號</td><td>描述</td><td>獲得方法</td><td>屬性</td></tr>");
+            //sw.WriteLine($"<tr><td>ID</td><td>角色</td><td>稱號</td><td>描述</td><td>獲得方法</td><td>屬性</td></tr>");
+            sw.WriteLine($"<tr><td>ID</td><td>Character</td><td>Title</td><td>Description</td><td>Acquired from</td><td>Effect</td></tr>");
         }
 
         public void WriteTail(StreamWriter sw)
@@ -221,7 +230,8 @@ namespace TitleParser
 
         public void WriteNoEffect(StreamWriter sw)
         {
-            sw.Write($"<td>無</td>");
+            //sw.Write($"<td>無</td>");
+            sw.Write($"<td>None</td>");
         }
 
         public void WriteEffect(StreamWriter sw, string[] effects)

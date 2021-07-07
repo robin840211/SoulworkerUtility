@@ -73,24 +73,24 @@ namespace CinemaParser
         private void ProcessSentence()
         {
             if (!File.Exists(mSettingFileName))
-                throw new Exception(mSettingFileName + "不存在");
+                throw new Exception(mSettingFileName + " not exist!");
 
             if (textBox1.Text == "")
-                throw new Exception("必須指定ID文件路徑");
+                throw new Exception("Must specific ID txt file path!");
             if (textBox3.Text == "")
-                throw new Exception("必須指定XML文件路徑");
+                throw new Exception("Must specific XML file path!");
 
             var cinemaIdFilePath = Path.Combine(textBox1.Text, mCinemaIdFileName);
             var questIdFilePath = Path.Combine(textBox1.Text, mQuestIdFileName);
             var cinemaXmlFilePath = textBox3.Text;
 
             if(!File.Exists(questIdFilePath))
-                throw new Exception(questIdFilePath + "不存在");
+                throw new Exception(questIdFilePath + " not exist!");
             Dictionary<string, Quest> questList;
             GetIdTable(questIdFilePath, out questList);
             
             if (!File.Exists(cinemaIdFilePath))
-                throw new Exception(cinemaIdFilePath + "不存在");
+                throw new Exception(cinemaIdFilePath + " not exist!");
             Dictionary<string, Sentences> sentencesList;
             GetIdTable(cinemaIdFilePath, out sentencesList);
 
@@ -102,7 +102,7 @@ namespace CinemaParser
                     Dictionary<int, string> contents = new Dictionary<int, string>();
                     string PC = pcXmlFile.Key;
                     string name = ReadIni("Character", pcXmlFile.Key);
-                    string filename = $"副本內劇情{name}.txt";
+                    string filename = $"Cinema_{name}.txt";
                     foreach (var xmlFilename in pcXmlFile.Value)
                     {
                         // Debug.WriteLine($"{xmlFilename}");
@@ -112,7 +112,7 @@ namespace CinemaParser
                         var levelname = GetLevelName(xmlFilename);
                         var cinemaPC = GetData<Cinematalk_Test>(xmlFilename);
                         var datas = Arrange(cinemaPC);
-                        writer.AppendLine("副本：" + ReadIni("Translate", levelname));
+                        writer.AppendLine("Maze: " + ReadIni("Translate", levelname));
                         WriteCinema(writer, PC, sentencesList, questList, datas);
                         var order = Convert.ToInt32(ReadIni("Order", levelname));
                         var content = writer.ToString();
@@ -143,7 +143,7 @@ namespace CinemaParser
         {
             var allFiles = Directory.GetFiles(path);
             if (!CheckXmlExist(allFiles))
-                throw new Exception("沒有XML檔案");
+                throw new Exception("No XML file found!");
 
             Dictionary<string, string[]> pcFiles = new Dictionary<string, string[]>();
             pcFiles.Add("PC_A", allFiles.Where(o => (o.IndexOf("PC_A") != -1)).ToArray());
@@ -195,7 +195,7 @@ namespace CinemaParser
 
                     if (oQuestID != nQuestID && nQuestID != "0")
                     {
-                        string tmp = $"任務：{questsList[nQuestID].QuestName} (Quest ID {nQuestID})";
+                        string tmp = $"Quest: {questsList[nQuestID].QuestName} (Quest ID {nQuestID})";
                         writer.AppendLine(tmp);
                     }
 

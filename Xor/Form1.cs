@@ -51,7 +51,8 @@ namespace Xor
                 using (BinaryWriter writer = new BinaryWriter(File.Open(nfilename, FileMode.Create)))
                 {
                     lock(_lock)
-                        Progress($"開始處理 {nfilename}");
+                        //Progress($"開始處理 {nfilename}");
+                        Progress($"Start process {nfilename}");
                     filesize = xoredStream.Length;
 
                     while (memoryUsage + filesize > 2000000000)
@@ -65,7 +66,8 @@ namespace Xor
                     writer.Write(buff, 0, (int)xoredStream.Length);
 
                     lock (_lock)
-                        Progress($"{nfilename} 處理完成");
+                        //Progress($"{nfilename} 處理完成");
+                        Progress($"Process {nfilename} done.");
                 }
 
                 lock (_memlock)
@@ -74,7 +76,8 @@ namespace Xor
                 GC.Collect();
             });
 
-            Progress($"全部處理完成");
+            //Progress($"全部處理完成");
+            Progress($"All done.");
         }
 
         private delegate void FuncWork<T>(T item);

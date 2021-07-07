@@ -118,7 +118,8 @@ namespace vArc_Package_manager
 			{
 				if (mUnpackFiles.Count == 0)
 				{
-					throw new Exception("必須加入 vArc 檔案來源");
+					//throw new Exception("必須加入 vArc 檔案來源");
+					throw new Exception("Must specific vArc source path!");
 				}
 				/*
 				if (string.IsNullOrEmpty(textBox2.Text))
@@ -147,11 +148,13 @@ namespace vArc_Package_manager
 			{
 				if (mPackFiles.Count == 0)
 				{
-					throw new Exception("必須加入 fsb 或 fev 檔案來源");
+					//throw new Exception("必須加入 fsb 或 fev 檔案來源");
+					throw new Exception("Must added fsb / fev source!");
 				}
 				if (string.IsNullOrEmpty(textBox3.Text))
 				{
-					throw new Exception("請輸入 Output 檔案路徑");
+					//throw new Exception("請輸入 Output 檔案路徑");
+					throw new Exception("Must specific Output path!");
 				}
 				List<string> files = (from o in mPackFiles.ToList()
 					select o.Key).ToList();

@@ -327,6 +327,7 @@ namespace vArc_Package_manager
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			openFileDialog.Title = "Select files";
 			openFileDialog.InitialDirectory = Application.StartupPath;
+			openFileDialog.RestoreDirectory = true;
 			openFileDialog.Filter = filter;
 			openFileDialog.Multiselect = true;
 			if (openFileDialog.ShowDialog() != DialogResult.OK)
@@ -426,6 +427,81 @@ namespace vArc_Package_manager
 				checkBox2.Enabled = true;
 			else
 				checkBox2.Enabled = false;
+		}
+
+		private void listBox1_DragEnter(object sender, DragEventArgs e)
+		{
+			if (e.Data.GetDataPresent(DataFormats.FileDrop))
+				e.Effect = DragDropEffects.Copy;
+		}
+
+		private void listBox1_DragDrop(object sender, DragEventArgs e)
+		{
+			if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+				string[] DragFileFullPaths = (string[])e.Data.GetData(DataFormats.FileDrop);
+				List<string> UnsupportFiles = new List<string>();
+
+				foreach (string fName in DragFileFullPaths)
+				{
+					string ext = Path.GetExtension(fName);
+					switch (ext.ToLower())
+                    {
+						case ".fsb":
+						case ".fev":
+							if (!listBox1.Items.Contains(fName))
+							{
+								listBox1.Items.Add(fName);
+								mPackFiles.Add(fName, 0);
+							}
+							break;
+						default:
+							UnsupportFiles.Add(Path.GetFileName(fName));
+							break;
+                    }
+				}
+				if (UnsupportFiles.Count > 0)
+                {
+					MessageBox.Show(string.Format("Following files are not add to list:\n{0}", string.Join("\n", UnsupportFiles)), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+			}
+		}
+
+		private void listBox2_DragEnter(object sender, DragEventArgs e)
+		{
+			if (e.Data.GetDataPresent(DataFormats.FileDrop))
+				e.Effect = DragDropEffects.Copy;
+		}
+
+		private void listBox2_DragDrop(object sender, DragEventArgs e)
+        {
+			if (e.Data.GetDataPresent(DataFormats.FileDrop))
+			{
+				string[] DragFileFullPaths = (string[])e.Data.GetData(DataFormats.FileDrop);
+				List<string> UnsupportFiles = new List<string>();
+
+				foreach (string fName in DragFileFullPaths)
+				{
+					string ext = Path.GetExtension(fName);
+					switch (ext.ToLower())
+					{
+						case ".varc":
+							if (!listBox2.Items.Contains(fName))
+							{
+								listBox2.Items.Add(fName);
+								mUnpackFiles.Add(fName, 0);
+							}
+							break;
+						default:
+							UnsupportFiles.Add(Path.GetFileName(fName));
+							break;
+					}
+				}
+				if (UnsupportFiles.Count > 0)
+				{
+					MessageBox.Show(string.Format("Following files are not add to list:\n{0}", string.Join("\n", UnsupportFiles)), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				}
+			}
 		}
     }
 }

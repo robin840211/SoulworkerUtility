@@ -34,7 +34,7 @@ namespace ResDecoder
         {
             string iPath = textBox1.Text;
             string oPath = textBox2.Text;
-            Envirment.NumberOfCharacter = Convert.ToInt32(numericUpDown1.Value);
+            DecodeParam.NumberOfCharacter = Convert.ToInt32(numericUpDown1.Value);
             string versionPrefix = "";
             if (radioButton1.Checked)
                 versionPrefix = "";
@@ -48,6 +48,7 @@ namespace ResDecoder
                 versionPrefix = "_ENG";
             else
                 versionPrefix = "";
+            DecodeParam.SelectedRegion = versionPrefix;
 
 
             // for tb_Achievement_Script.res
@@ -61,10 +62,10 @@ namespace ResDecoder
             }
 
             // for tb_Akashic_Parts.res
-            //ProcessFile(path, "tb_Akashic_Parts", new TbAkashicParts());
+            //ProcessFile(iPath, oPath, "tb_Akashic_Parts", new TbAkashicParts());
 
             // for tb_Appearance.res
-            //ProcessFile(path, "tb_Appearance", new TbAppearance());
+            ProcessFile(iPath, oPath, "tb_Appearance", new TbAppearance());
 
             // for tb_Booster.res
             ProcessFile(iPath, oPath, "tb_Booster", new TbBooster());
@@ -90,23 +91,16 @@ namespace ResDecoder
             }
 
             // for tb_Character_Info.res
-            //ProcessFile(path, "tb_Character_Parts", new TbCharacterParts());
+            ProcessFile(iPath, oPath, "tb_Character_Info", new TbCharacterInfo());
 
-            // for tb_ChattingFilter.res
-            /*
-            try
-            {
-                ProcessFile(iPath, oPath, string.Format("tb_ChattingFilter{0}", versionPrefix), new TbChattingFilter());
-            }
-            catch
-            {
-                ProcessFile(iPath, oPath, "tb_ChattingFilter", new TbChattingFilter());
-            }
-            */
-            ProcessFile(iPath, oPath, "tb_ChattingFilter", new TbChattingFilter());
+            // for tb_Character_Parts.res
+            //ProcessFile(iPath, oPath, "tb_Character_Parts", new TbCharacterParts());
 
             // for Tb_Chattingcommand.res
             ProcessFile(iPath, oPath, "Tb_Chattingcommand", new TbChattingCommand());
+
+            // for tb_ChattingFilter.res
+            ProcessFile(iPath, oPath, "tb_ChattingFilter", new TbChattingFilter());
 
             // for tb_cinema_string.res
             try
@@ -119,10 +113,10 @@ namespace ResDecoder
             }
 
             // for Tb_Class_Form.res
-            ProcessFile(iPath, oPath, "Tb_Class_Form", new TbClassForm());
+            //ProcessFile(iPath, oPath, "Tb_Class_Form", new TbClassForm());
 
             // for Tb_Class_Speech.res
-            ProcessFile(iPath, oPath, "Tb_Class_Speech", new TbClassSpeech());
+            //ProcessFile(iPath, oPath, "Tb_Class_Speech", new TbClassSpeech());
 
             // for tb_Cutscene_String.res
             try
@@ -159,10 +153,13 @@ namespace ResDecoder
             }
 
             // for tb_Loading_Img.res
-            //ProcessFile(path, "tb_Loading_Img", new TbLoadingImg());
+            ProcessFile(iPath, oPath, "tb_Loading_Img", new TbLoadingImg());
+
+            // for tb_Loading_Img.res
+            ProcessFile(iPath, oPath, "tb_Loading_String", new TbLoadingString());
 
             // for tb_MazeReward_GoldDirect.res
-            //ProcessFile(path, "tb_MazeReward_GoldDirect", new TbMazeRewardGoldDirect());
+            ProcessFile(iPath, oPath, "tb_MazeReward_GoldDirect", new TbMazeRewardGoldDirect());
 
             // for tb_Monster_script.res
             try

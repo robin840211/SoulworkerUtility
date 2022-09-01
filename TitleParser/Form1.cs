@@ -89,6 +89,7 @@ namespace TitleParser
                     versionPrefix = "_Custom";
                 else
                     versionPrefix = "";
+                DecodeParam.SelectedRegion = versionPrefix;
 
                 if (radioButton6.Checked)
                 {
@@ -180,26 +181,32 @@ namespace TitleParser
                     string name = "";
                     if (titleInfo.str[2] != "0")
                     {
-                        /*
-                        name = (titleInfo.str[2] == "1") ? "哈露" :
-                            (titleInfo.str[2] == "2") ? "歐文" :
-                            (titleInfo.str[2] == "3") ? "莉莉" :
-                            (titleInfo.str[2] == "4") ? "金" :
-                            (titleInfo.str[2] == "5") ? "史黛菈" :
-                            (titleInfo.str[2] == "6") ? "伊莉絲" :
-                            (titleInfo.str[2] == "7") ? "琪" :
-                            (titleInfo.str[2] == "8") ? "艾芙妮爾" :
-							(titleInfo.str[2] == "9") ? "李娜飛" : "未知，請在原始碼增加新角色並重新編譯";
-                        */
-                        name = (titleInfo.str[2] == "1") ? "Haru" :
-                            (titleInfo.str[2] == "2") ? "Erwin" :
-                            (titleInfo.str[2] == "3") ? "Lily" :
-                            (titleInfo.str[2] == "4") ? "Jin" :
-                            (titleInfo.str[2] == "5") ? "Stella" :
-                            (titleInfo.str[2] == "6") ? "Iris" :
-                            (titleInfo.str[2] == "7") ? "Chii" :
-                            (titleInfo.str[2] == "8") ? "Ephnel" :
-                            (titleInfo.str[2] == "9") ? "Lee Nabi" : "Unknown, please add character into Source Code and recompile.";
+                        if (versionPrefix == "_TWN")
+                        {
+                            name = (titleInfo.str[2] == "1") ? "哈露" :
+                                (titleInfo.str[2] == "2") ? "歐文" :
+                                (titleInfo.str[2] == "3") ? "莉莉" :
+                                (titleInfo.str[2] == "4") ? "金" :
+                                (titleInfo.str[2] == "5") ? "史黛菈" :
+                                (titleInfo.str[2] == "6") ? "伊莉絲" :
+                                (titleInfo.str[2] == "7") ? "琪" :
+                                (titleInfo.str[2] == "8") ? "艾芙妮爾" :
+                                (titleInfo.str[2] == "9") ? "李娜飛" :
+                                (titleInfo.str[2] == "10") ? "朵娜" : "未知，請在原始碼增加新角色並重新編譯";
+                        }
+                        else
+                        {
+                            name = (titleInfo.str[2] == "1") ? "Haru" :
+                                (titleInfo.str[2] == "2") ? "Erwin" :
+                                (titleInfo.str[2] == "3") ? "Lily" :
+                                (titleInfo.str[2] == "4") ? "Jin" :
+                                (titleInfo.str[2] == "5") ? "Stella" :
+                                (titleInfo.str[2] == "6") ? "Iris" :
+                                (titleInfo.str[2] == "7") ? "Chii" :
+                                (titleInfo.str[2] == "8") ? "Ephnel" :
+                                (titleInfo.str[2] == "9") ? "Lee Nabi" :
+                                (titleInfo.str[2] == "10") ? "Dhana" : "Unknown, please add character into Source Code and recompile.";
+                        }
                     }
                     method.WriteCharacter(sw, name);
 

@@ -137,12 +137,15 @@ namespace vArc_Package_manager
             // 
             // listBox2
             // 
+            this.listBox2.AllowDrop = true;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 12;
             this.listBox2.Location = new System.Drawing.Point(4, 64);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(531, 124);
             this.listBox2.TabIndex = 6;
+            this.listBox2.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox2_DragDrop);
+            this.listBox2.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox2_DragEnter);
             // 
             // button4
             // 
@@ -210,12 +213,15 @@ namespace vArc_Package_manager
             // 
             // listBox1
             // 
+            this.listBox1.AllowDrop = true;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(4, 64);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(531, 124);
             this.listBox1.TabIndex = 4;
+            this.listBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox1_DragDrop);
+            this.listBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox1_DragEnter);
             // 
             // button7
             // 
@@ -263,7 +269,7 @@ namespace vArc_Package_manager
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "vArc Package Manager v0.2";
+            this.Text = "vArc Package Manager v0.2.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

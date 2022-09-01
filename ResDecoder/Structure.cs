@@ -827,7 +827,6 @@ namespace ResDecoder
 
         override public void Write(StringBuilder sb)
         {
-            int k = 1;
             sb.AppendLine($"ID={i1}");
             for (int j = 1; j <= 6; j++)
                 sb.AppendLine(str[j]);
@@ -1150,8 +1149,8 @@ namespace ResDecoder
             b1 = GetByte(fs);
             str1 = GetString(fs);
             b2 = GetByte(fs);
-            for (int j = 1; j <= arrayLength; j++)
-                i[j-1] = GetUint(fs);
+            for (int j = 0; j < arrayLength; j++)
+                i[j] = GetUint(fs);
         }
 
         override public void Write(StringBuilder sb)
@@ -1160,11 +1159,18 @@ namespace ResDecoder
             sb.AppendLine(str1);
             sb.AppendLine($"NUM1={b2}");
             
+            for (int j = 0; j < arrayLength; j++)
+                if (j == 0)
+                    sb.AppendLine($"NUM{j+2}={i[j]}");
+                else
+                    sb.AppendLine($"NUM{j+3}={i[j]}");
+            /*
             for (int j = 1; j <= arrayLength; j++)
                 if (j - 1 == 0)
                     sb.AppendLine($"NUM{j+1}={i[j-1]}");
                 else
                     sb.AppendLine($"NUM{j+2}={i[j-1]}");
+            */
 
             // 換行
             sb.AppendLine("");
@@ -1480,7 +1486,7 @@ namespace ResDecoder
 
         override public void Write(StringBuilder sb)
         {
-            int k = 0, l, m = 0, n = 1;
+            int k = 0, l, m = 0;
             sb.AppendLine($"ID={i[k++]}");
             for (; k < 20; k++)
                 sb.AppendLine($"{i[k]}");

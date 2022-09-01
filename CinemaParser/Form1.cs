@@ -17,8 +17,8 @@ namespace CinemaParser
 {
     public partial class Form1 : Form
     {
-        private const string mCinemaIdFileName = "tb_cinema_string.txt";
-        private const string mQuestIdFileName = "tb_quest_script.txt";
+        private const string mCinemaIdFileName = "tb_cinema_string_twn.txt";
+        private const string mQuestIdFileName = "tb_quest_script_twn.txt";
         private static string mSettingFileName = Path.Combine(Application.StartupPath, "Setting.ini");
 
         IniFile ini = new IniFile(mSettingFileName);

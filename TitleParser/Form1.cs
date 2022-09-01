@@ -283,8 +283,6 @@ namespace TitleParser
         private string ReadIni(string section, string key)
         {
             JsonFile ini = new JsonFile(mSettingFileName);
-            if (key == "149")
-                Debug.Write("0");
             string result = ini.Read(key, section);
             return (String.IsNullOrEmpty(result)) ? key : result;
         }

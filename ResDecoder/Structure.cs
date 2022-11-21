@@ -354,6 +354,7 @@ namespace ResDecoder
 		    "String"
 	    ]
         */
+        // KR 的 TbBuffScript 有問題
         public TbBuffScript()
             : base(4)
         { }
@@ -451,7 +452,7 @@ namespace ResDecoder
 		    "Byte"
 	    ]
         */
-
+        // KR 的 TbCharacterInfo 有問題
         ushort[] us = new ushort[27];    // 1, 2, 20, 21, 37, 40 - 45, 48 - 56, 58 - 60, 81, 85
         byte[] b = new byte[6];         // 3, 33, 47, 86
         string[] str = new string[9];   // 4 - 10

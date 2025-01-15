@@ -85,7 +85,7 @@ Tb_Title_Info.txt
 tb_Title_String.txt
 ```
 
-## Xor
+## XOR_GUI
 
 Xor 處理 `.v` 檔案  
 To Xor `.v` files

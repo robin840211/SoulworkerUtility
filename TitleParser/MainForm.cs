@@ -21,10 +21,10 @@ namespace TitleParser
 
         private string mInputPath
         {
-            get { return textBox1.Text; }
+            get { return tb_InputPath.Text; }
             set
             {
-                textBox1.Text = value;
+                tb_InputPath.Text = value;
                 /*
                 mTitleInfoFileName = Path.Combine(mInputPath, "Tb_Title_Info.txt");
                 mTitleStringFileName = Path.Combine(mInputPath, "tb_Title_String.txt");
@@ -34,8 +34,8 @@ namespace TitleParser
 
         private string mOutputPath
         {
-            get { return textBox2.Text; }
-            set { textBox2.Text = value; }
+            get { return tb_OutputPath.Text; }
+            set { tb_OutputPath.Text = value; }
         }
 
         //private static string mSettingFileName = Path.Combine(Application.StartupPath, "Setting.ini");
@@ -54,7 +54,7 @@ namespace TitleParser
         //JsonFile ini = new JsonFile(mSettingFileName);
         Dictionary<string, string> mCache = new Dictionary<string, string>();
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Export_Click(object sender, EventArgs e)
         {
             Process();
         }
@@ -66,8 +66,8 @@ namespace TitleParser
                 List<TbTitle> title;
                 List<TbTitleInfo> titleInfo;
 
-                mInputPath = textBox1.Text;
-                mOutputPath = textBox2.Text;
+                mInputPath = tb_InputPath.Text;
+                mOutputPath = tb_OutputPath.Text;
                 /*
                 if (String.IsNullOrEmpty(mInputPath))
                     mInputPath = Application.StartupPath;
@@ -77,21 +77,21 @@ namespace TitleParser
                     mOutputPath = Application.StartupPath;
                     throw new System.InvalidOperationException($"輸出目錄不可為空");
                 */
-                if (radioButton4.Checked)
+                if (rdBtn_LangKOR.Checked)
                     versionPrefix = "_KOR";
-                else if (radioButton5.Checked)
+                else if (rdBtn_LangJPN.Checked)
                     versionPrefix = "_JPN";
-                else if (radioButton6.Checked)
+                else if (rdBtn_LangTWN.Checked)
                     versionPrefix = "_TWN";
-                else if (radioButton7.Checked)
+                else if (rdBtn_LangENG.Checked)
                     versionPrefix = "_ENG";
-                else if (radioButton8.Checked)
+                else if (rdBtn_LangOther.Checked)
                     versionPrefix = "_Custom";
                 else
                     versionPrefix = "";
                 DecodeParam.SelectedRegion = versionPrefix;
 
-                if (radioButton6.Checked)
+                if (rdBtn_LangTWN.Checked)
                 {
                     locale_PrevName = "前方稱號";
                     locale_AfterName = "後方稱號";
@@ -140,8 +140,8 @@ namespace TitleParser
                 List<TbTitleInfo> frontTitle = titleInfo.Where(o => (o.id.ToCharArray()[0] == '1')).ToList();
                 List<TbTitleInfo> backTitle = titleInfo.Where(o => (o.id.ToCharArray()[0] == '2')).ToList();
 
-                WritePackage format = (radioButton1.Checked) ? WritePackageFactory.GetInstance(WritePackageFactory.Type.TEXT) :
-                                      (radioButton2.Checked) ? WritePackageFactory.GetInstance(WritePackageFactory.Type.CSV) :
+                WritePackage format = (rdBtn_ExportTypeTXT.Checked) ? WritePackageFactory.GetInstance(WritePackageFactory.Type.TEXT) :
+                                      (rdBtn_ExportTypeCSV.Checked) ? WritePackageFactory.GetInstance(WritePackageFactory.Type.CSV) :
                                       WritePackageFactory.GetInstance(WritePackageFactory.Type.HTML);
 
                 WriteData(format, title, frontTitle, backTitle);
@@ -287,7 +287,7 @@ namespace TitleParser
             return (String.IsNullOrEmpty(result)) ? key : result;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_InputPath_Click(object sender, EventArgs e)
         {
             var ret = ChoiceFolder();
             if (!String.IsNullOrEmpty(ret))
@@ -312,7 +312,7 @@ namespace TitleParser
             return path;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_OutputPath_Click(object sender, EventArgs e)
         {
             var ret = ChoiceFolder();
             if (!String.IsNullOrEmpty(ret))
@@ -321,10 +321,10 @@ namespace TitleParser
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             // default
-            radioButton1.Checked = true;
+            rdBtn_ExportTypeTXT.Checked = true;
         }
 
         private void radioButtons_CheckedChanged(object sender, EventArgs e)

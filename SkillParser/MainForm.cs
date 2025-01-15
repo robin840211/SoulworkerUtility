@@ -23,7 +23,7 @@ namespace SkillParser
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Parse_Click(object sender, EventArgs e)
         {
             try {
                 Process();
@@ -35,7 +35,7 @@ namespace SkillParser
 
         private void Process()
         {
-            string inputPath = textBox1.Text;
+            string inputPath = tb_InputPath.Text;
             string path1 = Path.Combine(inputPath, mParamFile);
             string path2 = Path.Combine(inputPath, mInfoFile);
 
@@ -56,7 +56,7 @@ namespace SkillParser
 
         private void ProcessByCharactor(List<TbSkill> skills, List<TbSkillScript> skillScripts, int i)
         {
-            string outputPath = textBox2.Text;
+            string outputPath = tb_OutputPath.Text;
             string nPath = Path.Combine(outputPath, mCharactorList[i] + ".txt");
             using (FileStream fs = new FileStream(nPath, FileMode.Create))
             using (StreamWriter sw = new StreamWriter(fs)) {

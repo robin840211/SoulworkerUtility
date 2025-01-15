@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Xor
+namespace XOR_GUI
 {
     public partial class MainForm : Form
     {
@@ -26,15 +26,15 @@ namespace Xor
             ThreadPool.SetMaxThreads(5, 5);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_XOR_Click(object sender, EventArgs e)
         {
             RunBackground();
         }
 
         private void Process(object sender, EventArgs e)
         {
-            string iPath = textBox1.Text;
-            string oPath = textBox2.Text;
+            string iPath = tb_InputPath.Text;
+            string oPath = tb_OutputPath.Text;
             var allFiles = Directory.GetFiles(iPath);
             allFiles = allFiles.Where(o => (o.IndexOf(".v") != -1)).ToArray();
 
@@ -121,20 +121,30 @@ namespace Xor
 
         private void Progress(string text)
         {
-            if (textBox3.InvokeRequired)
+            if (tb_Log.InvokeRequired)
             {
                 var d = new SafeCallDelegate(Progress);
                 Invoke(d, new object[] { text });
             }
             else
             {
-                textBox3.AppendText(text + "\r\n");
+                tb_Log.AppendText(text + "\r\n");
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            textBox3.ScrollBars = ScrollBars.Vertical;
+            tb_Log.ScrollBars = ScrollBars.Vertical;
+        }
+
+        private void btn_InputPath_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_OutputPath_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

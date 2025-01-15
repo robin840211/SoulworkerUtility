@@ -18,7 +18,7 @@ namespace ResDecoder
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Export_Click(object sender, EventArgs e)
         {
             try
             {
@@ -32,19 +32,19 @@ namespace ResDecoder
 
         private void ProcessResFile()
         {
-            string iPath = textBox1.Text;
-            string oPath = textBox2.Text;
-            DecodeParam.NumberOfCharacter = Convert.ToInt32(numericUpDown1.Value);
+            string iPath = tb_InputPath.Text;
+            string oPath = tb_OutputPath.Text;
+            DecodeParam.NumberOfCharacter = Convert.ToInt32(numUD_Characters.Value);
             string versionPrefix = "";
-            if (radioButton1.Checked)
+            if (rdBtn_LangNone.Checked)
                 versionPrefix = "";
-            else if (radioButton2.Checked)
+            else if (rdBtn_LangKOR.Checked)
                 versionPrefix = "_KOR";
-            else if (radioButton3.Checked)
+            else if (rdBtn_LangJPN.Checked)
                 versionPrefix = "_JPN";
-            else if (radioButton4.Checked)
+            else if (rdBtn_LangTWN.Checked)
                 versionPrefix = "_TWN";
-            else if (radioButton5.Checked)
+            else if (rdBtn_LangENG.Checked)
                 versionPrefix = "_ENG";
             else
                 versionPrefix = "";
@@ -356,11 +356,11 @@ namespace ResDecoder
             writer.AppendLine(sb.ToString());
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_InputPath_Click(object sender, EventArgs e)
         {
             string tmp = ChoiceFolder();
             if (tmp != "")
-                textBox1.Text = tmp;
+                tb_InputPath.Text = tmp;
         }
 
         private string ChoiceFolder()
@@ -379,11 +379,11 @@ namespace ResDecoder
             return path;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_OutputPath_Click(object sender, EventArgs e)
         {
             string tmp = ChoiceFolder();
             if (tmp != "")
-                textBox2.Text = tmp;
+                tb_OutputPath.Text = tmp;
         }
     }
 }

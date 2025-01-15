@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Xor
+namespace XOR_GUI
 {
     /// <summary>
     ///  封裝ManualResetEvent

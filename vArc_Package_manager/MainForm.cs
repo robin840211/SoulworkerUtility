@@ -85,14 +85,14 @@ namespace vArc_Package_manager
 
 		private Dictionary<string, int> mPackFiles = new Dictionary<string, int>();
 
-		private void Form1_Load(object sender, EventArgs e)
+		private void MainForm_Load(object sender, EventArgs e)
 		{
 			Log.SetControl(mLogger.TextBox);
-			listBox1.SelectionMode = SelectionMode.MultiExtended;
-			listBox2.SelectionMode = SelectionMode.MultiExtended;
+			listBox_Pack_Files.SelectionMode = SelectionMode.MultiExtended;
+			listBox_Unpack_Files.SelectionMode = SelectionMode.MultiExtended;
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void btn_Unpack_Unpack_Click(object sender, EventArgs e)
 		{
 			mLogger.Show();
 			BackgroundWorker backgroundWorker = new BackgroundWorker();
@@ -102,7 +102,7 @@ namespace vArc_Package_manager
 			backgroundWorker.RunWorkerAsync();
 		}
 
-		private void button3_Click(object sender, EventArgs e)
+		private void btn_Pack_Pack_Click(object sender, EventArgs e)
 		{
 			mLogger.Show();
 			BackgroundWorker backgroundWorker = new BackgroundWorker();
@@ -130,7 +130,7 @@ namespace vArc_Package_manager
 				List<string> files = (from o in mUnpackFiles.ToList()
 					select o.Key).ToList();
 				DisableUI();
-				Unpack(textBox2.Text, files);
+				Unpack(tb_Unpack_OutputPath.Text, files);
 			}
 			catch (Exception ex)
 			{
@@ -151,7 +151,7 @@ namespace vArc_Package_manager
 					//throw new Exception("必須加入 fsb 或 fev 檔案來源");
 					throw new Exception("Must added fsb / fev source!");
 				}
-				if (string.IsNullOrEmpty(textBox3.Text))
+				if (string.IsNullOrEmpty(tb_Pack_OutputPath.Text))
 				{
 					//throw new Exception("請輸入 Output 檔案路徑");
 					throw new Exception("Must specific Output path!");
@@ -159,7 +159,7 @@ namespace vArc_Package_manager
 				List<string> files = (from o in mPackFiles.ToList()
 					select o.Key).ToList();
 				DisableUI();
-				Pack(textBox3.Text, files);
+				Pack(tb_Pack_OutputPath.Text, files);
 			}
 			catch (Exception ex)
 			{
@@ -180,9 +180,9 @@ namespace vArc_Package_manager
 			{
 				string varc_name = file.Split('\\').Last();
 				string write_path = outputFolder;
-				if (checkBox1.Checked)
+				if (cBox_Unpack_FolderOwn.Checked)
 				{
-					write_path = checkBox2.Checked ? Path.Combine(outputFolder, varc_name.Split('.').First(), "Sounds") : write_path = Path.Combine(outputFolder, varc_name.Split('.').First());
+					write_path = cBox_Unpack_FolderSounds.Checked ? Path.Combine(outputFolder, varc_name.Split('.').First(), "Sounds") : write_path = Path.Combine(outputFolder, varc_name.Split('.').First());
 					if (!Directory.Exists(write_path))
 						Directory.CreateDirectory(write_path);
 				}
@@ -304,7 +304,7 @@ namespace vArc_Package_manager
 		{
 			this.InvokeIfRequired(() =>
 			{
-				tabControl1.Enabled = false;
+				tControl_Action.Enabled = false;
 			});
 		}
 
@@ -312,14 +312,14 @@ namespace vArc_Package_manager
 		{
 			this.InvokeIfRequired(() =>
 			{
-				tabControl1.Enabled = true;
+				tControl_Action.Enabled = true;
 			});
 		}
 
-		private void button4_Click(object sender, EventArgs e)
+		private void btn_Unpack_AddFiles_Click(object sender, EventArgs e)
 		{
 			GetFileList("vArc files (*.vArc)|*.vArc", ref mUnpackFiles);
-			SetFilesToListBox(listBox2, ref mUnpackFiles);
+			SetFilesToListBox(listBox_Unpack_Files, ref mUnpackFiles);
 		}
 
 		private void GetFileList(string filter, ref Dictionary<string, int> files)
@@ -355,9 +355,9 @@ namespace vArc_Package_manager
 			lb.EndUpdate();
 		}
 
-		private void button6_Click(object sender, EventArgs e)
+		private void btn_Unpack_RemoveFiles_Click(object sender, EventArgs e)
 		{
-			RemoveFilesFromListBox(listBox2, ref mUnpackFiles);
+			RemoveFilesFromListBox(listBox_Unpack_Files, ref mUnpackFiles);
 		}
 
 		private void RemoveFilesFromListBox(ListBox lb, ref Dictionary<string, int> files)
@@ -374,68 +374,68 @@ namespace vArc_Package_manager
 			}
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		private void btn_Pack_AddFiles_Click(object sender, EventArgs e)
 		{
 			GetFileList("FMOD files (*.fsb,*.fev)|*.fsb;*.fev", ref mPackFiles);
-			SetFilesToListBox(listBox1, ref mPackFiles);
+			SetFilesToListBox(listBox_Pack_Files, ref mPackFiles);
 		}
-
-		private void button5_Click(object sender, EventArgs e)
+		
+		private void btn_Pack_RemoveFiles_Click(object sender, EventArgs e)
 		{
-			RemoveFilesFromListBox(listBox1, ref mPackFiles);
+			RemoveFilesFromListBox(listBox_Pack_Files, ref mPackFiles);
 		}
 
-		private void button7_Click(object sender, EventArgs e)
+		private void btn_Pack_OutputPath_Click(object sender, EventArgs e)
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "vArc files (*.vArc)|*.vArc";
-			saveFileDialog.FileName = string.IsNullOrWhiteSpace(textBox3.Text) ? "Untitled" : textBox3.Text.Split('\\').Last();
+			saveFileDialog.FileName = string.IsNullOrWhiteSpace(tb_Pack_OutputPath.Text) ? "Untitled" : tb_Pack_OutputPath.Text.Split('\\').Last();
 			saveFileDialog.DefaultExt = "vArc";
 			saveFileDialog.FilterIndex = 1;
 			saveFileDialog.RestoreDirectory = true;
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
-				textBox3.Text = saveFileDialog.FileName;
+				tb_Pack_OutputPath.Text = saveFileDialog.FileName;
 			}
 		}
 
-		private void button9_Click(object sender, EventArgs e)
+		private void btn_Unpack_ClearFiles_Click(object sender, EventArgs e)
 		{
-			listBox2.Items.Clear();
+			listBox_Unpack_Files.Items.Clear();
 			mUnpackFiles.Clear();
 		}
 
-		private void button8_Click(object sender, EventArgs e)
+		private void btn_Pack_ClearFiles_Click(object sender, EventArgs e)
 		{
-			listBox1.Items.Clear();
+			listBox_Pack_Files.Items.Clear();
 			mPackFiles.Clear();
 		}
 
-		private void button10_Click(object sender, EventArgs e)
+		private void btn_Unpack_OutputPath_Click(object sender, EventArgs e)
 		{
 			FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-			folderBrowserDialog.SelectedPath = string.IsNullOrWhiteSpace(textBox2.Text) ? "" : textBox2.Text;
+			folderBrowserDialog.SelectedPath = string.IsNullOrWhiteSpace(tb_Unpack_OutputPath.Text) ? "" : tb_Unpack_OutputPath.Text;
 			if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
 			{
-				textBox2.Text = folderBrowserDialog.SelectedPath;
+				tb_Unpack_OutputPath.Text = folderBrowserDialog.SelectedPath;
 			}
 		}
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void cBox_Unpack_FolderOwn_CheckedChanged(object sender, EventArgs e)
         {
-			if (checkBox1.Checked)
-				checkBox2.Enabled = true;
+			if (cBox_Unpack_FolderOwn.Checked)
+				cBox_Unpack_FolderSounds.Enabled = true;
 			else
-				checkBox2.Enabled = false;
+				cBox_Unpack_FolderSounds.Enabled = false;
 		}
 
-		private void listBox1_DragEnter(object sender, DragEventArgs e)
+		private void listBox_Pack_Files_DragEnter(object sender, DragEventArgs e)
 		{
 			if (e.Data.GetDataPresent(DataFormats.FileDrop))
 				e.Effect = DragDropEffects.Copy;
 		}
 
-		private void listBox1_DragDrop(object sender, DragEventArgs e)
+		private void listBox_Pack_Files_DragDrop(object sender, DragEventArgs e)
 		{
 			if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
@@ -449,9 +449,9 @@ namespace vArc_Package_manager
                     {
 						case ".fsb":
 						case ".fev":
-							if (!listBox1.Items.Contains(fName))
+							if (!listBox_Pack_Files.Items.Contains(fName))
 							{
-								listBox1.Items.Add(fName);
+								listBox_Pack_Files.Items.Add(fName);
 								mPackFiles.Add(fName, 0);
 							}
 							break;
@@ -467,13 +467,13 @@ namespace vArc_Package_manager
 			}
 		}
 
-		private void listBox2_DragEnter(object sender, DragEventArgs e)
+		private void listBox_Unpack_Files_DragEnter(object sender, DragEventArgs e)
 		{
 			if (e.Data.GetDataPresent(DataFormats.FileDrop))
 				e.Effect = DragDropEffects.Copy;
 		}
-
-		private void listBox2_DragDrop(object sender, DragEventArgs e)
+		
+		private void listBox_Unpack_Files_DragDrop(object sender, DragEventArgs e)
         {
 			if (e.Data.GetDataPresent(DataFormats.FileDrop))
 			{
@@ -486,9 +486,9 @@ namespace vArc_Package_manager
 					switch (ext.ToLower())
 					{
 						case ".varc":
-							if (!listBox2.Items.Contains(fName))
+							if (!listBox_Unpack_Files.Items.Contains(fName))
 							{
-								listBox2.Items.Add(fName);
+								listBox_Unpack_Files.Items.Add(fName);
 								mUnpackFiles.Add(fName, 0);
 							}
 							break;

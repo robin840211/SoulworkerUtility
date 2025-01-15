@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{48F50EC5-6CAE-4E4A-8B46-170F280AD37C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Xor</RootNamespace>
-    <AssemblyName>Xor</AssemblyName>
+    <RootNamespace>XOR_GUI</RootNamespace>
+    <AssemblyName>XOR_GUI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

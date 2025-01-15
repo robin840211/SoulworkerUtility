@@ -28,182 +28,182 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.btn_Export = new System.Windows.Forms.Button();
+            this.btn_InputPath = new System.Windows.Forms.Button();
+            this.tb_InputPath = new System.Windows.Forms.TextBox();
+            this.numUD_Characters = new System.Windows.Forms.NumericUpDown();
+            this.lb_Characters = new System.Windows.Forms.Label();
+            this.btn_OutputPath = new System.Windows.Forms.Button();
+            this.tb_OutputPath = new System.Windows.Forms.TextBox();
+            this.rdBtn_LangNone = new System.Windows.Forms.RadioButton();
+            this.lb_LangVersion = new System.Windows.Forms.Label();
+            this.rdBtn_LangKOR = new System.Windows.Forms.RadioButton();
+            this.rdBtn_LangJPN = new System.Windows.Forms.RadioButton();
+            this.rdBtn_LangTWN = new System.Windows.Forms.RadioButton();
+            this.rdBtn_LangENG = new System.Windows.Forms.RadioButton();
+            this.lb_Characters_Hint = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_Characters)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Export
             // 
-            this.button1.Location = new System.Drawing.Point(424, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Export";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Export.Location = new System.Drawing.Point(424, 40);
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.Size = new System.Drawing.Size(75, 23);
+            this.btn_Export.TabIndex = 0;
+            this.btn_Export.Text = "Export";
+            this.btn_Export.UseVisualStyleBackColor = true;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
-            // button2
+            // btn_InputPath
             // 
-            this.button2.Location = new System.Drawing.Point(9, 40);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Res Path";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_InputPath.Location = new System.Drawing.Point(9, 40);
+            this.btn_InputPath.Name = "btn_InputPath";
+            this.btn_InputPath.Size = new System.Drawing.Size(75, 23);
+            this.btn_InputPath.TabIndex = 0;
+            this.btn_InputPath.Text = "Res Path";
+            this.btn_InputPath.UseVisualStyleBackColor = true;
+            this.btn_InputPath.Click += new System.EventHandler(this.btn_InputPath_Click);
             // 
-            // textBox1
+            // tb_InputPath
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(315, 22);
-            this.textBox1.TabIndex = 1;
+            this.tb_InputPath.Location = new System.Drawing.Point(91, 40);
+            this.tb_InputPath.Name = "tb_InputPath";
+            this.tb_InputPath.Size = new System.Drawing.Size(315, 22);
+            this.tb_InputPath.TabIndex = 1;
             // 
-            // numericUpDown1
+            // numUD_Characters
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(91, 12);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(70, 22);
-            this.numericUpDown1.TabIndex = 2;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            9,
+            this.numUD_Characters.Location = new System.Drawing.Point(91, 12);
+            this.numUD_Characters.Name = "numUD_Characters";
+            this.numUD_Characters.Size = new System.Drawing.Size(70, 22);
+            this.numUD_Characters.TabIndex = 2;
+            this.numUD_Characters.Value = new decimal(new int[] {
+            10,
             0,
             0,
             0});
             // 
-            // label1
+            // lb_Characters
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 12);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Characters:";
+            this.lb_Characters.AutoSize = true;
+            this.lb_Characters.Location = new System.Drawing.Point(29, 16);
+            this.lb_Characters.Name = "lb_Characters";
+            this.lb_Characters.Size = new System.Drawing.Size(57, 12);
+            this.lb_Characters.TabIndex = 3;
+            this.lb_Characters.Text = "Characters:";
             // 
-            // button3
+            // btn_OutputPath
             // 
-            this.button3.Location = new System.Drawing.Point(9, 68);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Export Path";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_OutputPath.Location = new System.Drawing.Point(9, 68);
+            this.btn_OutputPath.Name = "btn_OutputPath";
+            this.btn_OutputPath.Size = new System.Drawing.Size(75, 23);
+            this.btn_OutputPath.TabIndex = 0;
+            this.btn_OutputPath.Text = "Export Path";
+            this.btn_OutputPath.UseVisualStyleBackColor = true;
+            this.btn_OutputPath.Click += new System.EventHandler(this.btn_OutputPath_Click);
             // 
-            // textBox2
+            // tb_OutputPath
             // 
-            this.textBox2.Location = new System.Drawing.Point(91, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(315, 22);
-            this.textBox2.TabIndex = 1;
+            this.tb_OutputPath.Location = new System.Drawing.Point(91, 68);
+            this.tb_OutputPath.Name = "tb_OutputPath";
+            this.tb_OutputPath.Size = new System.Drawing.Size(315, 22);
+            this.tb_OutputPath.TabIndex = 1;
             // 
-            // radioButton1
+            // rdBtn_LangNone
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(91, 97);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 16);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.Text = "None";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdBtn_LangNone.AutoSize = true;
+            this.rdBtn_LangNone.Location = new System.Drawing.Point(91, 97);
+            this.rdBtn_LangNone.Name = "rdBtn_LangNone";
+            this.rdBtn_LangNone.Size = new System.Drawing.Size(48, 16);
+            this.rdBtn_LangNone.TabIndex = 4;
+            this.rdBtn_LangNone.Text = "None";
+            this.rdBtn_LangNone.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lb_LangVersion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 12);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Lang Version";
+            this.lb_LangVersion.AutoSize = true;
+            this.lb_LangVersion.Location = new System.Drawing.Point(18, 99);
+            this.lb_LangVersion.Name = "lb_LangVersion";
+            this.lb_LangVersion.Size = new System.Drawing.Size(68, 12);
+            this.lb_LangVersion.TabIndex = 5;
+            this.lb_LangVersion.Text = "Lang Version";
             // 
-            // radioButton2
+            // rdBtn_LangKOR
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(145, 97);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(47, 16);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.Text = "KOR";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdBtn_LangKOR.AutoSize = true;
+            this.rdBtn_LangKOR.Location = new System.Drawing.Point(145, 97);
+            this.rdBtn_LangKOR.Name = "rdBtn_LangKOR";
+            this.rdBtn_LangKOR.Size = new System.Drawing.Size(47, 16);
+            this.rdBtn_LangKOR.TabIndex = 6;
+            this.rdBtn_LangKOR.Text = "KOR";
+            this.rdBtn_LangKOR.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdBtn_LangJPN
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(200, 97);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(41, 16);
-            this.radioButton3.TabIndex = 7;
-            this.radioButton3.Text = "JPN";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdBtn_LangJPN.AutoSize = true;
+            this.rdBtn_LangJPN.Location = new System.Drawing.Point(200, 97);
+            this.rdBtn_LangJPN.Name = "rdBtn_LangJPN";
+            this.rdBtn_LangJPN.Size = new System.Drawing.Size(41, 16);
+            this.rdBtn_LangJPN.TabIndex = 7;
+            this.rdBtn_LangJPN.Text = "JPN";
+            this.rdBtn_LangJPN.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rdBtn_LangTWN
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
-            this.radioButton4.Location = new System.Drawing.Point(247, 97);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(49, 16);
-            this.radioButton4.TabIndex = 8;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "TWN";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdBtn_LangTWN.AutoSize = true;
+            this.rdBtn_LangTWN.Checked = true;
+            this.rdBtn_LangTWN.Location = new System.Drawing.Point(247, 97);
+            this.rdBtn_LangTWN.Name = "rdBtn_LangTWN";
+            this.rdBtn_LangTWN.Size = new System.Drawing.Size(49, 16);
+            this.rdBtn_LangTWN.TabIndex = 8;
+            this.rdBtn_LangTWN.TabStop = true;
+            this.rdBtn_LangTWN.Text = "TWN";
+            this.rdBtn_LangTWN.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rdBtn_LangENG
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(302, 97);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(46, 16);
-            this.radioButton5.TabIndex = 9;
-            this.radioButton5.Text = "ENG";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rdBtn_LangENG.AutoSize = true;
+            this.rdBtn_LangENG.Location = new System.Drawing.Point(302, 97);
+            this.rdBtn_LangENG.Name = "rdBtn_LangENG";
+            this.rdBtn_LangENG.Size = new System.Drawing.Size(46, 16);
+            this.rdBtn_LangENG.TabIndex = 9;
+            this.rdBtn_LangENG.Text = "ENG";
+            this.rdBtn_LangENG.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // lb_Characters_Hint
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(167, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(281, 12);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "※How much characters the client you wanna decode have!";
+            this.lb_Characters_Hint.AutoSize = true;
+            this.lb_Characters_Hint.Location = new System.Drawing.Point(167, 16);
+            this.lb_Characters_Hint.Name = "lb_Characters_Hint";
+            this.lb_Characters_Hint.Size = new System.Drawing.Size(281, 12);
+            this.lb_Characters_Hint.TabIndex = 10;
+            this.lb_Characters_Hint.Text = "※How much characters the client you wanna decode have!";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 125);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lb_Characters_Hint);
+            this.Controls.Add(this.rdBtn_LangENG);
+            this.Controls.Add(this.rdBtn_LangTWN);
+            this.Controls.Add(this.rdBtn_LangJPN);
+            this.Controls.Add(this.rdBtn_LangKOR);
+            this.Controls.Add(this.lb_LangVersion);
+            this.Controls.Add(this.rdBtn_LangNone);
+            this.Controls.Add(this.lb_Characters);
+            this.Controls.Add(this.numUD_Characters);
+            this.Controls.Add(this.tb_OutputPath);
+            this.Controls.Add(this.btn_OutputPath);
+            this.Controls.Add(this.tb_InputPath);
+            this.Controls.Add(this.btn_InputPath);
+            this.Controls.Add(this.btn_Export);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "ResDecoder";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_Characters)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,20 +211,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Button btn_Export;
+        private System.Windows.Forms.Button btn_InputPath;
+        private System.Windows.Forms.TextBox tb_InputPath;
+        private System.Windows.Forms.NumericUpDown numUD_Characters;
+        private System.Windows.Forms.Label lb_Characters;
+        private System.Windows.Forms.Button btn_OutputPath;
+        private System.Windows.Forms.TextBox tb_OutputPath;
+        private System.Windows.Forms.RadioButton rdBtn_LangNone;
+        private System.Windows.Forms.Label lb_LangVersion;
+        private System.Windows.Forms.RadioButton rdBtn_LangJPN;
+        private System.Windows.Forms.RadioButton rdBtn_LangTWN;
+        private System.Windows.Forms.RadioButton rdBtn_LangENG;
+        private System.Windows.Forms.Label lb_Characters_Hint;
+        public System.Windows.Forms.RadioButton rdBtn_LangKOR;
     }
 }
 

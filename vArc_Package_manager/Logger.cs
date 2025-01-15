@@ -17,11 +17,11 @@ namespace vArc_Package_manager
 			InitializeComponent();
 		}
 
-		public TextBox TextBox => textBox1;
+		public TextBox TextBox => tb_Log;
 
 		private void Logger_Load(object sender, EventArgs e)
 		{
-			textBox1.ScrollBars = ScrollBars.Vertical;
+			tb_Log.ScrollBars = ScrollBars.Vertical;
 		}
 
 		private void Logger_FormClosing(object sender, FormClosingEventArgs e)

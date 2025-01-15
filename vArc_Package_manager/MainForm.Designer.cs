@@ -29,278 +29,278 @@ namespace vArc_Package_manager
         /// </summary>
         private void InitializeComponent()
 		{
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tControl_Action = new System.Windows.Forms.TabControl();
+            this.tPage_Unpack = new System.Windows.Forms.TabPage();
+            this.cBox_Unpack_FolderOwn = new System.Windows.Forms.CheckBox();
+            this.cBox_Unpack_FolderSounds = new System.Windows.Forms.CheckBox();
+            this.btn_Unpack_OutputPath = new System.Windows.Forms.Button();
+            this.btn_Unpack_ClearFiles = new System.Windows.Forms.Button();
+            this.btn_Unpack_RemoveFiles = new System.Windows.Forms.Button();
+            this.listBox_Unpack_Files = new System.Windows.Forms.ListBox();
+            this.btn_Unpack_AddFiles = new System.Windows.Forms.Button();
+            this.btn_Unpack_Unpack = new System.Windows.Forms.Button();
+            this.tb_Unpack_OutputPath = new System.Windows.Forms.TextBox();
+            this.tPage_Pack = new System.Windows.Forms.TabPage();
+            this.btn_Pack_ClearFiles = new System.Windows.Forms.Button();
+            this.btn_Pack_RemoveFiles = new System.Windows.Forms.Button();
+            this.listBox_Pack_Files = new System.Windows.Forms.ListBox();
+            this.btn_Pack_OutputPath = new System.Windows.Forms.Button();
+            this.btn_Pack_Pack = new System.Windows.Forms.Button();
+            this.tb_Pack_OutputPath = new System.Windows.Forms.TextBox();
+            this.btn_Pack_AddFiles = new System.Windows.Forms.Button();
+            this.tControl_Action.SuspendLayout();
+            this.tPage_Unpack.SuspendLayout();
+            this.tPage_Pack.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tControl_Action
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(551, 220);
-            this.tabControl1.TabIndex = 0;
+            this.tControl_Action.Controls.Add(this.tPage_Unpack);
+            this.tControl_Action.Controls.Add(this.tPage_Pack);
+            this.tControl_Action.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tControl_Action.Location = new System.Drawing.Point(0, 0);
+            this.tControl_Action.Name = "tControl_Action";
+            this.tControl_Action.SelectedIndex = 0;
+            this.tControl_Action.Size = new System.Drawing.Size(551, 220);
+            this.tControl_Action.TabIndex = 0;
             // 
-            // tabPage1
+            // tPage_Unpack
             // 
-            this.tabPage1.Controls.Add(this.checkBox1);
-            this.tabPage1.Controls.Add(this.checkBox2);
-            this.tabPage1.Controls.Add(this.button10);
-            this.tabPage1.Controls.Add(this.button9);
-            this.tabPage1.Controls.Add(this.button6);
-            this.tabPage1.Controls.Add(this.listBox2);
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(543, 194);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Unpack";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tPage_Unpack.Controls.Add(this.cBox_Unpack_FolderOwn);
+            this.tPage_Unpack.Controls.Add(this.cBox_Unpack_FolderSounds);
+            this.tPage_Unpack.Controls.Add(this.btn_Unpack_OutputPath);
+            this.tPage_Unpack.Controls.Add(this.btn_Unpack_ClearFiles);
+            this.tPage_Unpack.Controls.Add(this.btn_Unpack_RemoveFiles);
+            this.tPage_Unpack.Controls.Add(this.listBox_Unpack_Files);
+            this.tPage_Unpack.Controls.Add(this.btn_Unpack_AddFiles);
+            this.tPage_Unpack.Controls.Add(this.btn_Unpack_Unpack);
+            this.tPage_Unpack.Controls.Add(this.tb_Unpack_OutputPath);
+            this.tPage_Unpack.Location = new System.Drawing.Point(4, 22);
+            this.tPage_Unpack.Name = "tPage_Unpack";
+            this.tPage_Unpack.Padding = new System.Windows.Forms.Padding(3);
+            this.tPage_Unpack.Size = new System.Drawing.Size(543, 194);
+            this.tPage_Unpack.TabIndex = 0;
+            this.tPage_Unpack.Text = "Unpack";
+            this.tPage_Unpack.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cBox_Unpack_FolderOwn
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(282, 38);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(123, 16);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "Extract to own folder";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cBox_Unpack_FolderOwn.AutoSize = true;
+            this.cBox_Unpack_FolderOwn.Location = new System.Drawing.Point(282, 38);
+            this.cBox_Unpack_FolderOwn.Name = "cBox_Unpack_FolderOwn";
+            this.cBox_Unpack_FolderOwn.Size = new System.Drawing.Size(123, 16);
+            this.cBox_Unpack_FolderOwn.TabIndex = 11;
+            this.cBox_Unpack_FolderOwn.Text = "Extract to own folder";
+            this.cBox_Unpack_FolderOwn.UseVisualStyleBackColor = true;
+            this.cBox_Unpack_FolderOwn.CheckedChanged += new System.EventHandler(this.cBox_Unpack_FolderOwn_CheckedChanged);
             // 
-            // checkBox2
+            // cBox_Unpack_FolderSounds
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(411, 38);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(129, 16);
-            this.checkBox2.TabIndex = 10;
-            this.checkBox2.Text = "Extend \'Sounds\' folder";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cBox_Unpack_FolderSounds.AutoSize = true;
+            this.cBox_Unpack_FolderSounds.Enabled = false;
+            this.cBox_Unpack_FolderSounds.Location = new System.Drawing.Point(411, 38);
+            this.cBox_Unpack_FolderSounds.Name = "cBox_Unpack_FolderSounds";
+            this.cBox_Unpack_FolderSounds.Size = new System.Drawing.Size(129, 16);
+            this.cBox_Unpack_FolderSounds.TabIndex = 10;
+            this.cBox_Unpack_FolderSounds.Text = "Extend \'Sounds\' folder";
+            this.cBox_Unpack_FolderSounds.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btn_Unpack_OutputPath
             // 
-            this.button10.Location = new System.Drawing.Point(0, 4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(79, 23);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "Output Folder";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.btn_Unpack_OutputPath.Location = new System.Drawing.Point(0, 4);
+            this.btn_Unpack_OutputPath.Name = "btn_Unpack_OutputPath";
+            this.btn_Unpack_OutputPath.Size = new System.Drawing.Size(79, 23);
+            this.btn_Unpack_OutputPath.TabIndex = 9;
+            this.btn_Unpack_OutputPath.Text = "Output Folder";
+            this.btn_Unpack_OutputPath.UseVisualStyleBackColor = true;
+            this.btn_Unpack_OutputPath.Click += new System.EventHandler(this.btn_Unpack_OutputPath_Click);
             // 
-            // button9
+            // btn_Unpack_ClearFiles
             // 
-            this.button9.Location = new System.Drawing.Point(180, 34);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "Clear";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btn_Unpack_ClearFiles.Location = new System.Drawing.Point(180, 34);
+            this.btn_Unpack_ClearFiles.Name = "btn_Unpack_ClearFiles";
+            this.btn_Unpack_ClearFiles.Size = new System.Drawing.Size(75, 23);
+            this.btn_Unpack_ClearFiles.TabIndex = 8;
+            this.btn_Unpack_ClearFiles.Text = "Clear";
+            this.btn_Unpack_ClearFiles.UseVisualStyleBackColor = true;
+            this.btn_Unpack_ClearFiles.Click += new System.EventHandler(this.btn_Unpack_ClearFiles_Click);
             // 
-            // button6
+            // btn_Unpack_RemoveFiles
             // 
-            this.button6.Location = new System.Drawing.Point(87, 34);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(87, 23);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Remove Files";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btn_Unpack_RemoveFiles.Location = new System.Drawing.Point(87, 34);
+            this.btn_Unpack_RemoveFiles.Name = "btn_Unpack_RemoveFiles";
+            this.btn_Unpack_RemoveFiles.Size = new System.Drawing.Size(87, 23);
+            this.btn_Unpack_RemoveFiles.TabIndex = 7;
+            this.btn_Unpack_RemoveFiles.Text = "Remove Files";
+            this.btn_Unpack_RemoveFiles.UseVisualStyleBackColor = true;
+            this.btn_Unpack_RemoveFiles.Click += new System.EventHandler(this.btn_Unpack_RemoveFiles_Click);
             // 
-            // listBox2
+            // listBox_Unpack_Files
             // 
-            this.listBox2.AllowDrop = true;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 12;
-            this.listBox2.Location = new System.Drawing.Point(4, 64);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(531, 124);
-            this.listBox2.TabIndex = 6;
-            this.listBox2.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox2_DragDrop);
-            this.listBox2.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox2_DragEnter);
+            this.listBox_Unpack_Files.AllowDrop = true;
+            this.listBox_Unpack_Files.FormattingEnabled = true;
+            this.listBox_Unpack_Files.ItemHeight = 12;
+            this.listBox_Unpack_Files.Location = new System.Drawing.Point(4, 64);
+            this.listBox_Unpack_Files.Name = "listBox_Unpack_Files";
+            this.listBox_Unpack_Files.Size = new System.Drawing.Size(531, 124);
+            this.listBox_Unpack_Files.TabIndex = 6;
+            this.listBox_Unpack_Files.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_Unpack_Files_DragDrop);
+            this.listBox_Unpack_Files.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_Unpack_Files_DragEnter);
             // 
-            // button4
+            // btn_Unpack_AddFiles
             // 
-            this.button4.Location = new System.Drawing.Point(6, 34);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Add Files";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_Unpack_AddFiles.Location = new System.Drawing.Point(6, 34);
+            this.btn_Unpack_AddFiles.Name = "btn_Unpack_AddFiles";
+            this.btn_Unpack_AddFiles.Size = new System.Drawing.Size(75, 23);
+            this.btn_Unpack_AddFiles.TabIndex = 5;
+            this.btn_Unpack_AddFiles.Text = "Add Files";
+            this.btn_Unpack_AddFiles.UseVisualStyleBackColor = true;
+            this.btn_Unpack_AddFiles.Click += new System.EventHandler(this.btn_Unpack_AddFiles_Click);
             // 
-            // button1
+            // btn_Unpack_Unpack
             // 
-            this.button1.Location = new System.Drawing.Point(468, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Unpack";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Unpack_Unpack.Location = new System.Drawing.Point(468, 5);
+            this.btn_Unpack_Unpack.Name = "btn_Unpack_Unpack";
+            this.btn_Unpack_Unpack.Size = new System.Drawing.Size(75, 23);
+            this.btn_Unpack_Unpack.TabIndex = 2;
+            this.btn_Unpack_Unpack.Text = "Unpack";
+            this.btn_Unpack_Unpack.UseVisualStyleBackColor = true;
+            this.btn_Unpack_Unpack.Click += new System.EventHandler(this.btn_Unpack_Unpack_Click);
             // 
-            // textBox2
+            // tb_Unpack_OutputPath
             // 
-            this.textBox2.Location = new System.Drawing.Point(81, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(385, 22);
-            this.textBox2.TabIndex = 0;
+            this.tb_Unpack_OutputPath.Location = new System.Drawing.Point(81, 6);
+            this.tb_Unpack_OutputPath.Name = "tb_Unpack_OutputPath";
+            this.tb_Unpack_OutputPath.Size = new System.Drawing.Size(385, 22);
+            this.tb_Unpack_OutputPath.TabIndex = 0;
             // 
-            // tabPage2
+            // tPage_Pack
             // 
-            this.tabPage2.Controls.Add(this.button8);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.listBox1);
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(543, 194);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Pack";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tPage_Pack.Controls.Add(this.btn_Pack_ClearFiles);
+            this.tPage_Pack.Controls.Add(this.btn_Pack_RemoveFiles);
+            this.tPage_Pack.Controls.Add(this.listBox_Pack_Files);
+            this.tPage_Pack.Controls.Add(this.btn_Pack_OutputPath);
+            this.tPage_Pack.Controls.Add(this.btn_Pack_Pack);
+            this.tPage_Pack.Controls.Add(this.tb_Pack_OutputPath);
+            this.tPage_Pack.Controls.Add(this.btn_Pack_AddFiles);
+            this.tPage_Pack.Location = new System.Drawing.Point(4, 22);
+            this.tPage_Pack.Name = "tPage_Pack";
+            this.tPage_Pack.Padding = new System.Windows.Forms.Padding(3);
+            this.tPage_Pack.Size = new System.Drawing.Size(543, 194);
+            this.tPage_Pack.TabIndex = 1;
+            this.tPage_Pack.Text = "Pack";
+            this.tPage_Pack.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btn_Pack_ClearFiles
             // 
-            this.button8.Location = new System.Drawing.Point(180, 34);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Clear";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btn_Pack_ClearFiles.Location = new System.Drawing.Point(180, 34);
+            this.btn_Pack_ClearFiles.Name = "btn_Pack_ClearFiles";
+            this.btn_Pack_ClearFiles.Size = new System.Drawing.Size(75, 23);
+            this.btn_Pack_ClearFiles.TabIndex = 6;
+            this.btn_Pack_ClearFiles.Text = "Clear";
+            this.btn_Pack_ClearFiles.UseVisualStyleBackColor = true;
+            this.btn_Pack_ClearFiles.Click += new System.EventHandler(this.btn_Pack_ClearFiles_Click);
             // 
-            // button5
+            // btn_Pack_RemoveFiles
             // 
-            this.button5.Location = new System.Drawing.Point(87, 34);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Remove Files";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_Pack_RemoveFiles.Location = new System.Drawing.Point(87, 34);
+            this.btn_Pack_RemoveFiles.Name = "btn_Pack_RemoveFiles";
+            this.btn_Pack_RemoveFiles.Size = new System.Drawing.Size(87, 23);
+            this.btn_Pack_RemoveFiles.TabIndex = 5;
+            this.btn_Pack_RemoveFiles.Text = "Remove Files";
+            this.btn_Pack_RemoveFiles.UseVisualStyleBackColor = true;
+            this.btn_Pack_RemoveFiles.Click += new System.EventHandler(this.btn_Pack_RemoveFiles_Click);
             // 
-            // listBox1
+            // listBox_Pack_Files
             // 
-            this.listBox1.AllowDrop = true;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(4, 64);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(531, 124);
-            this.listBox1.TabIndex = 4;
-            this.listBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox1_DragDrop);
-            this.listBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox1_DragEnter);
+            this.listBox_Pack_Files.AllowDrop = true;
+            this.listBox_Pack_Files.FormattingEnabled = true;
+            this.listBox_Pack_Files.ItemHeight = 12;
+            this.listBox_Pack_Files.Location = new System.Drawing.Point(4, 64);
+            this.listBox_Pack_Files.Name = "listBox_Pack_Files";
+            this.listBox_Pack_Files.Size = new System.Drawing.Size(531, 124);
+            this.listBox_Pack_Files.TabIndex = 4;
+            this.listBox_Pack_Files.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_Pack_Files_DragDrop);
+            this.listBox_Pack_Files.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_Pack_Files_DragEnter);
             // 
-            // button7
+            // btn_Pack_OutputPath
             // 
-            this.button7.Location = new System.Drawing.Point(0, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(79, 23);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Output File";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btn_Pack_OutputPath.Location = new System.Drawing.Point(0, 4);
+            this.btn_Pack_OutputPath.Name = "btn_Pack_OutputPath";
+            this.btn_Pack_OutputPath.Size = new System.Drawing.Size(79, 23);
+            this.btn_Pack_OutputPath.TabIndex = 3;
+            this.btn_Pack_OutputPath.Text = "Output File";
+            this.btn_Pack_OutputPath.UseVisualStyleBackColor = true;
+            this.btn_Pack_OutputPath.Click += new System.EventHandler(this.btn_Pack_OutputPath_Click);
             // 
-            // button3
+            // btn_Pack_Pack
             // 
-            this.button3.Location = new System.Drawing.Point(468, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Pack";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_Pack_Pack.Location = new System.Drawing.Point(468, 5);
+            this.btn_Pack_Pack.Name = "btn_Pack_Pack";
+            this.btn_Pack_Pack.Size = new System.Drawing.Size(75, 23);
+            this.btn_Pack_Pack.TabIndex = 3;
+            this.btn_Pack_Pack.Text = "Pack";
+            this.btn_Pack_Pack.UseVisualStyleBackColor = true;
+            this.btn_Pack_Pack.Click += new System.EventHandler(this.btn_Pack_Pack_Click);
             // 
-            // textBox3
+            // tb_Pack_OutputPath
             // 
-            this.textBox3.Location = new System.Drawing.Point(81, 6);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(385, 22);
-            this.textBox3.TabIndex = 1;
+            this.tb_Pack_OutputPath.Location = new System.Drawing.Point(81, 6);
+            this.tb_Pack_OutputPath.Name = "tb_Pack_OutputPath";
+            this.tb_Pack_OutputPath.Size = new System.Drawing.Size(385, 22);
+            this.tb_Pack_OutputPath.TabIndex = 1;
             // 
-            // button2
+            // btn_Pack_AddFiles
             // 
-            this.button2.Location = new System.Drawing.Point(6, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Add Files";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Pack_AddFiles.Location = new System.Drawing.Point(6, 34);
+            this.btn_Pack_AddFiles.Name = "btn_Pack_AddFiles";
+            this.btn_Pack_AddFiles.Size = new System.Drawing.Size(75, 23);
+            this.btn_Pack_AddFiles.TabIndex = 0;
+            this.btn_Pack_AddFiles.Text = "Add Files";
+            this.btn_Pack_AddFiles.UseVisualStyleBackColor = true;
+            this.btn_Pack_AddFiles.Click += new System.EventHandler(this.btn_Pack_AddFiles_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 220);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tControl_Action);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "vArc Package Manager v0.2.1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.tControl_Action.ResumeLayout(false);
+            this.tPage_Unpack.ResumeLayout(false);
+            this.tPage_Unpack.PerformLayout();
+            this.tPage_Pack.ResumeLayout(false);
+            this.tPage_Pack.PerformLayout();
             this.ResumeLayout(false);
 
 		}
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TabControl tControl_Action;
+        private System.Windows.Forms.TabPage tPage_Unpack;
+        private System.Windows.Forms.TabPage tPage_Pack;
+        private System.Windows.Forms.Button btn_Unpack_Unpack;
+        private System.Windows.Forms.TextBox tb_Unpack_OutputPath;
+        private System.Windows.Forms.ListBox listBox_Pack_Files;
+        private System.Windows.Forms.Button btn_Pack_Pack;
+        private System.Windows.Forms.TextBox tb_Pack_OutputPath;
+        private System.Windows.Forms.Button btn_Pack_AddFiles;
+        private System.Windows.Forms.ListBox listBox_Unpack_Files;
+        private System.Windows.Forms.Button btn_Unpack_AddFiles;
+        private System.Windows.Forms.Button btn_Unpack_RemoveFiles;
+        private System.Windows.Forms.Button btn_Pack_RemoveFiles;
+        private System.Windows.Forms.Button btn_Pack_OutputPath;
+        private System.Windows.Forms.Button btn_Unpack_ClearFiles;
+        private System.Windows.Forms.Button btn_Pack_ClearFiles;
+        private System.Windows.Forms.Button btn_Unpack_OutputPath;
+        private System.Windows.Forms.CheckBox cBox_Unpack_FolderSounds;
+        private System.Windows.Forms.CheckBox cBox_Unpack_FolderOwn;
     }
 }
 

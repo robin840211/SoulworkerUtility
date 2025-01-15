@@ -28,72 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btn_Export = new System.Windows.Forms.Button();
+            this.btn_InputPath = new System.Windows.Forms.Button();
+            this.tb_InputPath = new System.Windows.Forms.TextBox();
+            this.btn_OutputPath = new System.Windows.Forms.Button();
+            this.tb_OutputPath = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Export
             // 
-            this.button1.Location = new System.Drawing.Point(493, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Export";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Export.Location = new System.Drawing.Point(493, 13);
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.Size = new System.Drawing.Size(83, 23);
+            this.btn_Export.TabIndex = 0;
+            this.btn_Export.Text = "Export";
+            this.btn_Export.UseVisualStyleBackColor = true;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
-            // button2
+            // btn_InputPath
             // 
-            this.button2.Location = new System.Drawing.Point(13, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "ID txt Path";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_InputPath.Location = new System.Drawing.Point(13, 12);
+            this.btn_InputPath.Name = "btn_InputPath";
+            this.btn_InputPath.Size = new System.Drawing.Size(110, 23);
+            this.btn_InputPath.TabIndex = 1;
+            this.btn_InputPath.Text = "ID txt Path";
+            this.btn_InputPath.UseVisualStyleBackColor = true;
+            this.btn_InputPath.Click += new System.EventHandler(this.btn_InputPath_Click);
             // 
-            // textBox1
+            // tb_InputPath
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(358, 22);
-            this.textBox1.TabIndex = 2;
+            this.tb_InputPath.Location = new System.Drawing.Point(129, 13);
+            this.tb_InputPath.Name = "tb_InputPath";
+            this.tb_InputPath.Size = new System.Drawing.Size(358, 22);
+            this.tb_InputPath.TabIndex = 2;
             // 
-            // button4
+            // btn_OutputPath
             // 
-            this.button4.Location = new System.Drawing.Point(13, 41);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 23);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Xml Path";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_OutputPath.Location = new System.Drawing.Point(13, 41);
+            this.btn_OutputPath.Name = "btn_OutputPath";
+            this.btn_OutputPath.Size = new System.Drawing.Size(110, 23);
+            this.btn_OutputPath.TabIndex = 1;
+            this.btn_OutputPath.Text = "Xml Path";
+            this.btn_OutputPath.UseVisualStyleBackColor = true;
+            this.btn_OutputPath.Click += new System.EventHandler(this.btn_OutputPath_Click);
             // 
-            // textBox3
+            // tb_OutputPath
             // 
-            this.textBox3.Location = new System.Drawing.Point(129, 41);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(358, 22);
-            this.textBox3.TabIndex = 2;
+            this.tb_OutputPath.Location = new System.Drawing.Point(129, 41);
+            this.tb_OutputPath.Name = "tb_OutputPath";
+            this.tb_OutputPath.Size = new System.Drawing.Size(358, 22);
+            this.tb_OutputPath.TabIndex = 2;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 73);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tb_OutputPath);
+            this.Controls.Add(this.btn_OutputPath);
+            this.Controls.Add(this.tb_InputPath);
+            this.Controls.Add(this.btn_InputPath);
+            this.Controls.Add(this.btn_Export);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Cinema Parser";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,11 +101,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btn_Export;
+        private System.Windows.Forms.Button btn_InputPath;
+        private System.Windows.Forms.TextBox tb_InputPath;
+        private System.Windows.Forms.Button btn_OutputPath;
+        private System.Windows.Forms.TextBox tb_OutputPath;
     }
 }
 

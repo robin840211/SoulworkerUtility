@@ -28,18 +28,18 @@ namespace CinemaParser
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_InputPath_Click(object sender, EventArgs e)
         {
             string tmp = ChoiceFolder();
             if (tmp != "")
-                textBox1.Text = tmp;
+                tb_InputPath.Text = tmp;
         }
         
-        private void button4_Click(object sender, EventArgs e)
+        private void btn_OutputPath_Click(object sender, EventArgs e)
         {
             string tmp = ChoiceFolder();
             if (tmp != "")
-                textBox3.Text = tmp;
+                tb_OutputPath.Text = tmp;
         }
 
         private string ChoiceFolder()
@@ -58,7 +58,7 @@ namespace CinemaParser
             return path;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Export_Click(object sender, EventArgs e)
         {
             try
             {
@@ -75,14 +75,14 @@ namespace CinemaParser
             if (!File.Exists(mSettingFileName))
                 throw new Exception(mSettingFileName + " not exist!");
 
-            if (textBox1.Text == "")
+            if (tb_InputPath.Text == "")
                 throw new Exception("Must specific ID txt file path!");
-            if (textBox3.Text == "")
+            if (tb_OutputPath.Text == "")
                 throw new Exception("Must specific XML file path!");
 
-            var cinemaIdFilePath = Path.Combine(textBox1.Text, mCinemaIdFileName);
-            var questIdFilePath = Path.Combine(textBox1.Text, mQuestIdFileName);
-            var cinemaXmlFilePath = textBox3.Text;
+            var cinemaIdFilePath = Path.Combine(tb_InputPath.Text, mCinemaIdFileName);
+            var questIdFilePath = Path.Combine(tb_InputPath.Text, mQuestIdFileName);
+            var cinemaXmlFilePath = tb_OutputPath.Text;
 
             if(!File.Exists(questIdFilePath))
                 throw new Exception(questIdFilePath + " not exist!");
@@ -304,7 +304,7 @@ namespace CinemaParser
             return (result == "") ? key : result;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
         }        
     }

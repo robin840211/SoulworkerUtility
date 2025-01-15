@@ -21,7 +21,7 @@ namespace TitleParser
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
 
         // 嘗試載入內嵌資源的函式
